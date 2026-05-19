@@ -9,8 +9,8 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11",
     "react": "latest",
     "react-dom": "latest",
     "mammoth": "latest"

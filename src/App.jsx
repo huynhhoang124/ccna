@@ -1,207 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import mammoth from "mammoth/mammoth.browser";
 import { parseQuizItems, shuffleQuestions } from "./quizParser.js";
-
-const STORAGE_KEY = "docx-quiz-redo:lastQuiz:v2";
-const DB_NAME = "docx-quiz-redo-db";
-const DB_VERSION = 1;
-const QUIZ_STORE = "quizzes";
-
-function loadStoredQuiz() {
-  try {
-    const value = localStorage.getItem(STORAGE_KEY);
-    if (!value) return null;
-    const quiz = JSON.parse(value);
-    return quiz.id ? quiz : { ...quiz, id: crypto.randomUUID?.() || `quiz-${Date.now()}` };
-  } catch {
-    return null;
-  }
-}
-
-function saveStoredQuiz(quiz) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(quiz));
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function openQuizDb() {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
-    request.onupgradeneeded = () => {
-      request.result.createObjectStore(QUIZ_STORE, { keyPath: "id" });
-    };
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-  });
-}
-
-async function idbRequest(operation) {
-  const db = await openQuizDb();
-  return new Promise((resolve, reject) => {
-    const transaction = db.transaction(QUIZ_STORE, operation.mode);
-    const store = transaction.objectStore(QUIZ_STORE);
-    const request = operation.run(store);
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-    transaction.oncomplete = () => db.close();
-    transaction.onerror = () => {
-      db.close();
-      reject(transaction.error);
-    };
-  });
-}
-
-function quizMeta(quiz) {
-  return {
-    id: quiz.id,
-    fileName: quiz.fileName,
-    importedAt: quiz.importedAt,
-    questionCount: quiz.questions?.length || 0,
-    manualCount: quiz.manualNotes?.length || 0
-  };
-}
-
-async function saveQuizToLibrary(quiz) {
-  await idbRequest({ mode: "readwrite", run: (store) => store.put(quiz) });
-}
-
-async function loadQuizLibrary() {
-  const quizzes = await idbRequest({ mode: "readonly", run: (store) => store.getAll() });
-  return quizzes.map(quizMeta).sort((a, b) => new Date(b.importedAt) - new Date(a.importedAt));
-}
-
-async function getSavedQuiz(id) {
-  return idbRequest({ mode: "readonly", run: (store) => store.get(id) });
-}
-
-async function deleteSavedQuiz(id) {
-  await idbRequest({ mode: "readwrite", run: (store) => store.delete(id) });
-}
-
-function optionClass({ submitted, selected, correct }) {
-  if (!submitted) return selected ? "option selected" : "option";
-  if (correct) return "option correct";
-  if (selected) return "option wrong";
-  return "option muted";
-}
-
-function sameAnswers(selectedAnswers, correctAnswers) {
-  if (selectedAnswers.length !== correctAnswers.length) return false;
-  return correctAnswers.every((answer) => selectedAnswers.includes(answer));
-}
-
-function cleanText(value) {
-  return value.replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
-}
-
-async function extractDocxItems(arrayBuffer) {
-  const result = await mammoth.convertToHtml(
-    { arrayBuffer },
-    {
-      convertImage: mammoth.images.imgElement(async (image) => {
-        const base64 = await image.read("base64");
-        return {
-          src: `data:${image.contentType};base64,${base64}`
-        };
-      })
-    }
-  );
-
-  const documentHtml = new DOMParser().parseFromString(result.value, "text/html");
-  const blocks = [...documentHtml.body.querySelectorAll("p, li, td, th")];
-  const nodes = blocks.length ? blocks : [...documentHtml.body.children];
-
-  return nodes.flatMap((node) => {
-    const clone = node.cloneNode(true);
-    clone.querySelectorAll("br").forEach((br) => br.replaceWith("\n"));
-    const images = [...clone.querySelectorAll("img")].map((image) => image.getAttribute("src")).filter(Boolean);
-    clone.querySelectorAll("img").forEach((image) => image.remove());
-
-    const lines = (clone.textContent || "")
-      .split(/\n+/)
-      .map(cleanText)
-      .filter(Boolean);
-
-    if (lines.length === 0) {
-      return images.length ? [{ text: "", images }] : [];
-    }
-
-    return lines.map((line, index) => ({
-      text: line,
-      images: index === lines.length - 1 ? images : []
-    }));
-  });
-}
-
-function ImageList({ images, compact = false }) {
-  if (!images?.length) return null;
-
-  return (
-    <div className={compact ? "imageGrid compactImages" : "imageGrid"}>
-      {images.map((src, index) => (
-        <img className="docImage" src={src} alt={`Hình ${index + 1}`} key={`${src.slice(0, 64)}-${index}`} />
-      ))}
-    </div>
-  );
-}
-
-function formatReadableLines(text) {
-  return text
-    .replace(/\s+(?=(?:[A-Za-z]+)?(?:Router|Switch|switch|router)\d*(?:\([^)]+\))?#)/g, "\n")
-    .replace(/\s+(?=interface\s+(?:gigabit|fast|ethernet|gi|fa)\S*)/gi, "\n")
-    .replace(/\s+(?=ip\s+(?:address|nat|access-list|route|access-group)\b)/gi, "\n")
-    .replace(/\s+(?=access-list\s+\d+\b)/gi, "\n")
-    .replace(/\s+(?=switchport\s+\b)/gi, "\n")
-    .replace(/\s+(?=spanning-tree\s+\b)/gi, "\n")
-    .replace(/\s+(?=line\s+vty\b)/gi, "\n")
-    .replace(/\s+(?=Option\s+[A-H]\b)/g, "\n")
-    .split(/\n+/)
-    .map(cleanText)
-    .filter(Boolean);
-}
-
-function isCodeLine(line) {
-  return (
-    /#/.test(line) ||
-    /^(?:interface|ip|access-list|switchport|spanning-tree|line vty|router|show|copy|enable|configure)\b/i.test(line)
-  );
-}
-
-function RichText({ text, className = "" }) {
-  const lines = formatReadableLines(text || "");
-  const groups = [];
-
-  for (const line of lines) {
-    const type = isCodeLine(line) ? "code" : "text";
-    const lastGroup = groups[groups.length - 1];
-    if (lastGroup?.type === type) {
-      lastGroup.lines.push(line);
-    } else {
-      groups.push({ type, lines: [line] });
-    }
-  }
-
-  return (
-    <div className={className}>
-      {groups.map((group, index) =>
-        group.type === "code" ? (
-          <pre className="codeBlock" key={`${group.type}-${index}`}>
-            {group.lines.join("\n")}
-          </pre>
-        ) : (
-          <div className="textBlock" key={`${group.type}-${index}`}>
-            {group.lines.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </div>
-        )
-      )}
-    </div>
-  );
-}
+import {
+  loadStoredQuiz,
+  saveStoredQuiz,
+  clearStoredQuiz,
+  saveQuizToLibrary,
+  loadQuizLibrary,
+  getSavedQuiz,
+  deleteSavedQuiz
+} from "./db.js";
+import { sameAnswers, optionClass } from "./utils.js";
+import { extractDocxItems } from "./docxExtractor.js";
+import ImageList from "./components/ImageList.jsx";
+import RichText from "./components/RichText.jsx";
 
 export default function App() {
   const inputRef = useRef(null);
@@ -216,6 +27,10 @@ export default function App() {
   const [editingNoteIndex, setEditingNoteIndex] = useState(null);
   const [manualDraft, setManualDraft] = useState(null);
   const [savedQuizzes, setSavedQuizzes] = useState([]);
+  
+  // Các state mới cho Chế độ Thực chiến
+  const [quizMode, setQuizMode] = useState("exam"); // "exam" | "practice"
+  const [isShuffle, setIsShuffle] = useState(true);
 
   useEffect(() => {
     refreshLibrary();
@@ -310,15 +125,15 @@ export default function App() {
 
   function startQuiz() {
     if (!quiz?.questions?.length) return;
-    setQuestions(shuffleQuestions(quiz.questions));
+    setQuestions(isShuffle ? shuffleQuestions(quiz.questions) : quiz.questions);
     setAnswers({});
     setSubmitted(false);
-    setMessage("Đã đảo thứ tự câu hỏi. Bắt đầu làm bài.");
+    setMessage(isShuffle ? "Đã đảo thứ tự câu hỏi. Bắt đầu làm bài." : "Đã bắt đầu làm bài.");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function clearQuiz() {
-    localStorage.removeItem(STORAGE_KEY);
+    clearStoredQuiz();
     setQuiz(null);
     setQuestions([]);
     setAnswers({});
@@ -603,31 +418,64 @@ export default function App() {
       )}
 
       {quiz && (
-        <section className="summary">
+        <section className="summary" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           <div>
             <p className="label">Quiz hiện tại</p>
-            <h2>{quiz.fileName}</h2>
+            <h2>{quiz.fileName || "Quiz không tên"}</h2>
             <p>
-              Có {quiz.questions.length} câu. Nhập lúc{" "}
-              {new Date(quiz.importedAt).toLocaleString("vi-VN")}.
+              Có {quiz.questions?.length || 0} câu. Nhập lúc{" "}
+              {quiz.importedAt ? new Date(quiz.importedAt).toLocaleString("vi-VN") : "không rõ"}.
             </p>
           </div>
-          <div className="actions">
-            <button type="button" className="primary" onClick={startQuiz}>
-              {questions.length ? "Làm lại và đảo câu" : "Bắt đầu làm bài"}
-            </button>
-            <button type="button" className="secondary" onClick={exportQuizJson}>
-              Xuất JSON
-            </button>
-            <button type="button" className="secondary" onClick={() => jsonInputRef.current?.click()}>
-              Nhập JSON
-            </button>
-            <button type="button" className="secondary" onClick={clearQuiz}>
-              Xóa quiz
-            </button>
+          <div className="actions" style={{ width: "100%", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="quizOptions" style={{ display: "flex", gap: "1.5rem", marginBottom: "1rem", alignItems: "center", flexWrap: "wrap", padding: "1rem", backgroundColor: "var(--bg-secondary)", borderRadius: "var(--radius-md)" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontWeight: "500" }}>
+                <input
+                  type="checkbox"
+                  checked={isShuffle}
+                  onChange={(e) => setIsShuffle(e.target.checked)}
+                />
+                Trộn câu hỏi
+              </label>
+              <div style={{ width: "1px", height: "24px", backgroundColor: "var(--border-color)" }}></div>
+              <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
+                <input
+                  type="radio"
+                  name="quizMode"
+                  value="exam"
+                  checked={quizMode === "exam"}
+                  onChange={() => setQuizMode("exam")}
+                />
+                Thi thử (Nộp bài mới biết điểm)
+              </label>
+              <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
+                <input
+                  type="radio"
+                  name="quizMode"
+                  value="practice"
+                  checked={quizMode === "practice"}
+                  onChange={() => setQuizMode("practice")}
+                />
+                Thực chiến (Hiện đáp án ngay khi chọn đủ)
+              </label>
+            </div>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              <button type="button" className="primary" onClick={startQuiz}>
+                {questions.length ? "Làm lại bài" : "Bắt đầu làm bài"}
+              </button>
+              <button type="button" className="secondary" onClick={exportQuizJson}>
+                Xuất JSON
+              </button>
+              <button type="button" className="secondary" onClick={() => jsonInputRef.current?.click()}>
+                Nhập JSON
+              </button>
+              <button type="button" className="secondary" onClick={clearQuiz}>
+                Xóa quiz
+              </button>
+            </div>
           </div>
 
-          {quiz.warnings.length > 0 && (
+          {quiz.warnings && quiz.warnings.length > 0 && (
             <div className="warnings">
               <strong>Cảnh báo khi nhập file</strong>
               <ul>
@@ -742,49 +590,55 @@ export default function App() {
           )}
 
           <div className="questionList">
-            {questions.map((question, index) => (
-              <article className="question" key={question.id}>
-                <div className="questionTop">
-                  <span>Câu {index + 1}</span>
-                  {submitted && <strong>Đáp án đúng: {(question.correctAnswers || [question.correctAnswer]).join(", ")}</strong>}
-                </div>
-                {(question.correctAnswers || [question.correctAnswer]).length > 1 && (
-                  <p className="multiHint">Chọn {(question.correctAnswers || []).length} đáp án</p>
-                )}
-                <RichText text={question.question} className="questionText" />
-                <ImageList images={question.images} />
+            {questions.map((question, index) => {
+              const selectedAnswers = answers[question.id] || [];
+              const correctAnswers = question.correctAnswers || [question.correctAnswer];
+              
+              // Trong chế độ thực chiến, câu hỏi được đánh giá ngay khi số lượng đáp án được chọn bằng với số lượng đáp án đúng
+              const isQuestionSubmitted = submitted || (quizMode === "practice" && selectedAnswers.length === correctAnswers.length);
 
-                <div className="options">
-                  {question.choices.map((choice) => {
-                    const selectedAnswers = answers[question.id] || [];
-                    const correctAnswers = question.correctAnswers || [question.correctAnswer];
-                    const selected = selectedAnswers.includes(choice.label);
-                    const correct = correctAnswers.includes(choice.label);
-                    const isMultiAnswer = correctAnswers.length > 1;
+              return (
+                <article className="question" key={question.id}>
+                  <div className="questionTop">
+                    <span>Câu {index + 1}</span>
+                    {isQuestionSubmitted && <strong>Đáp án đúng: {correctAnswers.join(", ")}</strong>}
+                  </div>
+                  {correctAnswers.length > 1 && (
+                    <p className="multiHint">Chọn {correctAnswers.length} đáp án</p>
+                  )}
+                  <RichText text={question.question} className="questionText" />
+                  <ImageList images={question.images} />
 
-                    return (
-                      <label
-                        className={optionClass({ submitted, selected, correct })}
-                        key={choice.label}
-                      >
-                        <input
-                          type={isMultiAnswer ? "checkbox" : "radio"}
-                          name={question.id}
-                          checked={selected}
-                          disabled={submitted}
-                          onChange={() => chooseAnswer(question, choice.label)}
-                        />
-                        <span className="letter">{choice.label}</span>
-                        <span className="choiceContent">
-                          <RichText text={choice.text} className="choiceText" />
-                          <ImageList images={choice.images} compact />
-                        </span>
-                      </label>
-                    );
-                  })}
-                </div>
-              </article>
-            ))}
+                  <div className="options">
+                    {question.choices.map((choice) => {
+                      const selected = selectedAnswers.includes(choice.label);
+                      const correct = correctAnswers.includes(choice.label);
+                      const isMultiAnswer = correctAnswers.length > 1;
+
+                      return (
+                        <label
+                          className={optionClass({ submitted: isQuestionSubmitted, selected, correct })}
+                          key={choice.label}
+                        >
+                          <input
+                            type={isMultiAnswer ? "checkbox" : "radio"}
+                            name={question.id}
+                            checked={selected}
+                            disabled={isQuestionSubmitted}
+                            onChange={() => chooseAnswer(question, choice.label)}
+                          />
+                          <span className="letter">{choice.label}</span>
+                          <span className="choiceContent">
+                            <RichText text={choice.text} className="choiceText" />
+                            <ImageList images={choice.images} compact />
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
       )}
