@@ -192,6 +192,7 @@ export default function App() {
     const choicesByLabel = Object.fromEntries((note.choices || []).map((choice) => [choice.label, choice.text || ""]));
     setEditingNoteIndex(index);
     setManualDraft({
+      number: note.number,
       question: note.question || "",
       images: note.images || [],
       choices: {
@@ -253,6 +254,7 @@ export default function App() {
 
     const newQuestion = {
       id: `manual-${Date.now()}`,
+      number: manualDraft.number,
       question: manualDraft.question.trim(),
       images: manualDraft.images || [],
       choices,
@@ -600,7 +602,7 @@ export default function App() {
               return (
                 <article className="question" key={question.id}>
                   <div className="questionTop">
-                    <span>Câu {index + 1}</span>
+                    <span>Câu {question.number || (index + 1)}</span>
                     {isQuestionSubmitted && <strong>Đáp án đúng: {correctAnswers.join(", ")}</strong>}
                   </div>
                   {correctAnswers.length > 1 && (

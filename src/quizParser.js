@@ -1,5 +1,5 @@
 const CHOICE_LABELS = ["A", "B", "C", "D", "E", "F", "G", "H"];
-const CHOICE_MARKER_RE = /([A-H])\s*[.)：:\-]\s*/gu;
+const CHOICE_MARKER_RE = /\b([A-H])\s*[.)：:\-]\s*/gu;
 const OPTION_MARKER_RE = /Option\s+([A-H])\s*/gu;
 const ANSWER_KEY_PAIR_RE = /(?:cau|question|q)?\s*(\d{1,3})\s*[.)：:\-]?\s*([A-Ha-h](?:[\s,;/]+[A-Ha-h])*)\b/gu;
 
@@ -109,7 +109,7 @@ function parseAnswerKeyLine(line) {
   return pairs;
 }
 
-function parseChoicesFromLine(line) {
+function parseChoicesFromLine(line, activeChoice = "") {
   const markers = [];
   const markerRe = /^Option\s+[A-H]/u.test(line) ? OPTION_MARKER_RE : CHOICE_MARKER_RE;
   const seenLabels = new Set();
@@ -126,6 +126,10 @@ function parseChoicesFromLine(line) {
   }
 
   if (markers.length === 0) return null;
+
+  if (!activeChoice && markers[0].label !== "A") {
+    return null;
+  }
 
   const prefix = line.slice(0, markers[0].start).trim();
   const choices = markers.map((marker, index) => {
@@ -212,7 +216,7 @@ function appendImages(draft, activeChoice, images) {
 }
 
 function applyInlineChoices(draft, item, activeChoice) {
-  const parsed = parseChoicesFromLine(item.text);
+  const parsed = parseChoicesFromLine(item.text, activeChoice);
   if (!parsed) return { handled: false, activeChoice };
 
   if (parsed.prefix) {
@@ -302,6 +306,7 @@ function finishDraft(draft, parsedIndex, answerKey) {
   return {
     question: {
       id: `q-${parsedIndex + 1}-${crypto.randomUUID?.() || Date.now()}`,
+      number: draft.number,
       question,
       images: draft.questionImages,
       choices: availableLabels.map((label) => {
@@ -366,7 +371,7 @@ export function parseQuizItems(rawItems) {
 
       const inline = applyInlineChoices(draft, { text: questionMatch.text, images: [] }, activeChoice);
       if (inline.handled) {
-        const parsed = parseChoicesFromLine(questionMatch.text);
+        const parsed = parseChoicesFromLine(questionMatch.text, activeChoice);
         draft.questionParts = parsed?.prefix ? [parsed.prefix] : [];
         activeChoice = inline.activeChoice;
       }
