@@ -20,35 +20,35 @@ const PRELOADED_DEVOPS_EXAMS = [
     title: "Đề 1: AWS Cloud Practitioner CLF-C02",
     meta: "100 câu hỏi song ngữ Anh - Việt",
     fileName: "Đề_1_CLF2 song ngữ 100 câu.docx",
-    path: "/devops/Đề_1_CLF2%20song%20ngữ%20100%20câu.docx"
+    path: "/devops/Đề_1_CLF2_song_ngữ_100_câu.json"
   },
   {
     id: "devops-exam-2",
     title: "Đề 2: AWS Cloud Practitioner CLF-C02",
     meta: "100 câu hỏi song ngữ Anh - Việt",
     fileName: "Đề_2_CLF2 song ngữ 100 câu.docx",
-    path: "/devops/Đề_2_CLF2%20song%20ngữ%20100%20câu.docx"
+    path: "/devops/Đề_2_CLF2_song_ngữ_100_câu.json"
   },
   {
     id: "devops-exam-3",
     title: "Đề 3: AWS Cloud Practitioner CLF-C02",
     meta: "100 câu hỏi song ngữ Anh - Việt",
     fileName: "Đề_3_CLF2 song ngữ 100 câu.docx",
-    path: "/devops/Đề_3_CLF2%20song%20ngữ%20100%20câu.docx"
+    path: "/devops/Đề_3_CLF2_song_ngữ_100_câu.json"
   },
   {
     id: "devops-exam-4",
     title: "Đề 4: AWS Cloud Practitioner CLF-C02",
     meta: "100 câu hỏi song ngữ Anh - Việt",
     fileName: "Đề_4_CLF2 song ngữ 100 câu.docx",
-    path: "/devops/Đề_4_CLF2%20song%20ngữ%20100%20câu.docx"
+    path: "/devops/Đề_4_CLF2_song_ngữ_100_câu.json"
   },
   {
     id: "devops-exam-5",
     title: "Đề 5: AWS Cloud Practitioner CLF-C02",
-    meta: "100 câu hỏi song ngữ Anh - Việt",
+    meta: "75 câu hỏi song ngữ Anh - Việt",
     fileName: "Đề_5_CLF2 song ngữ 100 câu.docx",
-    path: "/devops/Đề_5_CLF2%20song%20ngữ%20100%20câu.docx"
+    path: "/devops/Đề_5_CLF2_song_ngữ_100_câu.json"
   }
 ];
 

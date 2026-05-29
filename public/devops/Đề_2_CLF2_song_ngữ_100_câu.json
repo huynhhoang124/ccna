@@ -1,0 +1,3304 @@
+{
+  "sourceFile": "Đề_2_CLF2 song ngữ 100 câu.docx",
+  "fileName": "Đề_2_CLF2 song ngữ 100 câu.docx",
+  "generatedAt": "2026-05-29T19:05:18Z",
+  "questionCount": 100,
+  "questions": [
+    {
+      "id": "devops-q-2-1",
+      "number": 1,
+      "question": "A manager is planning to migrate applications to the AWS Cloud and needs to obtain AWS compliance reports. How can these reports be generated?\nĐề bài: Một quản lý dự định di chuyển ứng dụng lên AWS Cloud và cần lấy các báo cáo tuân thủ của AWS. Có thể tạo/lấy các báo cáo này bằng cách nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Contact the AWS Compliance team. - Liên hệ với nhóm tuân thủ AWS.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Download the reports from AWS Secrets Manager. - Tải báo cáo từ AWS Secrets Manager.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Download the reports from AWS Artifact. - Tải báo cáo từ AWS Artifact.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Create a support ticket with AWS Support. - Tạo phiếu hỗ trợ với AWS Support.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-2",
+      "number": 2,
+      "question": "An architecture's ability to withstand failures with minimal downtime demonstrates which AWS Cloud benefits?\nĐề bài: Khả năng của một kiến trúc trong việc chịu được sự cố với thời gian gián đoạn tối thiểu thể hiện lợi ích nào của AWS Cloud?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Agility - Tính linh hoạt / nhanh nhạy",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Elasticity - Tính đàn hồi / khả năng co giãn tài nguyên",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Scalability - Khả năng mở rộng",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "High availability - Tính sẵn sàng cao",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-3",
+      "number": 3,
+      "question": "What are the benefits of using Amazon Rekognition with image files?\nĐề bài: Lợi ích của việc dùng Amazon Rekognition với tệp hình ảnh là gì?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Can help with image compression - Có thể hỗ trợ nén hình ảnh",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Can be used to resize images - Có thể dùng để thay đổi kích thước hình ảnh",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Can be used to identify objects in an image - Có thể dùng để nhận diện đối tượng trong hình ảnh",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Can be used to transcode audio - Có thể dùng để chuyển mã âm thanh",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-4",
+      "number": 4,
+      "question": "Which of the below is an example of an architectural benefit of moving to the cloud?\nĐề bài: Điều nào dưới đây là ví dụ về lợi ích kiến trúc khi chuyển lên cloud?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Proprietary hardware - Phần cứng độc quyền",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Monolithic services - Các dịch vụ nguyên khối",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Elasticity - Tính đàn hồi / khả năng co giãn tài nguyên",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Vertical scalability - Khả năng mở rộng theo chiều dọc",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-5",
+      "number": 5,
+      "question": "Which AWS service supports an in-memory data structure store, compatible with Redis, that delivers sub-millisecond latency for use cases such as caching, session stores, and real-time analytics?\nĐề bài: Dịch vụ AWS nào hỗ trợ kho dữ liệu cấu trúc trong bộ nhớ, tương thích với Redis, cung cấp độ trễ dưới một mili giây cho các trường hợp như caching, session store và phân tích thời gian thực?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon DynamoDB - Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon MemoryDB - Dịch vụ cơ sở dữ liệu in-memory tương thích Redis Amazon MemoryDB",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon RDS - Dịch vụ cơ sở dữ liệu quan hệ Amazon RDS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Redshift - Dịch vụ kho dữ liệu Amazon Redshift",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-6",
+      "number": 6,
+      "question": "Which service can be used to cost-effectively move exabytes of data into AWS?\nĐề bài: Dịch vụ nào có thể được dùng để chuyển dữ liệu ở quy mô exabyte vào AWS một cách tiết kiệm chi phí?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "S3 Transfer Acceleration - Tính năng tăng tốc truyền dữ liệu vào Amazon S3",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Snowmobile - Dịch vụ truyền dữ liệu quy mô exabyte bằng xe chuyên dụng AWS Snowmobile",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Snowball - Thiết bị truyền dữ liệu vật lý AWS Snowball",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "S3 Cross-Region Replication (CRR) - Tính năng sao chép dữ liệu Amazon S3 giữa các Region",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-7",
+      "number": 7,
+      "question": "Under the AWS shared responsibility model, which actions are the responsibility of AWS? (Select TWO.)\nĐề bài: Theo mô hình trách nhiệm chia sẻ của AWS, những hành động nào thuộc trách nhiệm của AWS? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Scanning AWS service endpoints for vulnerabilities. - Quét các endpoint dịch vụ AWS để phát hiện lỗ hổng bảo mật.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Enforcing application access restrictions. - Thực thi các giới hạn truy cập của ứng dụng.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Encrypting traffic on the AWS backbone between global and regional AWS facilities. - Mã hóa lưu lượng trên mạng backbone của AWS giữa các cơ sở toàn cầu và khu vực của AWS.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Enabling encryption on an Amazon S3 bucket. - Bật mã hóa cho một bucket Amazon S3.",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Configuring security group rules. - Cấu hình các quy tắc security group.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "C"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-8",
+      "number": 8,
+      "question": "An IT company has deployed its infrastructure on the AWS cloud. There must be a database that supports reads with a latency of under a millisecond for critical applications. Which AWS service will meet this requirement?\nĐề bài: Một công ty IT đã triển khai hạ tầng trên AWS Cloud. Công ty cần một cơ sở dữ liệu hỗ trợ đọc dữ liệu với độ trễ dưới một mili giây cho các ứng dụng quan trọng. Dịch vụ AWS nào đáp ứng yêu cầu này?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Glue - Dịch vụ tích hợp và ETL dữ liệu AWS Glue",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon RDS - Dịch vụ cơ sở dữ liệu quan hệ Amazon RDS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon EMR - Dịch vụ xử lý dữ liệu lớn Amazon EMR",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon ElastiCache - Dịch vụ bộ nhớ đệm in-memory Amazon ElastiCache",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-9",
+      "number": 9,
+      "question": "You have been running an on-demand Amazon EC2 instance running Linux for 4hrs, 5 minutes and 6 seconds. How much time will you be billed for?\nĐề bài: Bạn đã chạy một Amazon EC2 On-Demand instance dùng Linux trong 4 giờ, 5 phút và 6 giây. Bạn sẽ bị tính phí cho bao nhiêu thời gian?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "4hrs - 4 giờ",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "5hrs - 5 giờ",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "4hrs, 6mins - 4 giờ 6 phút",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "4hrs, 5mins, and 6 seconds - 4 giờ 5 phút 6 giây",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "D"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-10",
+      "number": 10,
+      "question": "Which IAM entity can be used for assigning permissions to AWS services?\nĐề bài: Thực thể IAM nào có thể được dùng để gán quyền cho các dịch vụ AWS?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "IAM Policy - Chính sách IAM",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "IAM Access Key ID and Secret Access Key - Access Key ID và Secret Access Key của IAM",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "IAM Role - Vai trò IAM",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Security Token Service (STS) - Dịch vụ cấp thông tin xác thực tạm thời Security Token Service (STS)",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-11",
+      "number": 11,
+      "question": "What is a benefit of moving an on-premises database to Amazon Relational Database Service (RDS)?\nĐề bài: Lợi ích của việc chuyển cơ sở dữ liệu on-premises sang Amazon RDS là gì?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "You can run any database engine - Bạn có thể chạy bất kỳ database engine nào",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "You can scale vertically without downtime - Bạn có thể mở rộng theo chiều dọc mà không có downtime",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "There is no need to manage operating systems - Không cần quản lý hệ điều hành",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "There is no database administration required - Không cần quản trị cơ sở dữ liệu",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-12",
+      "number": 12,
+      "question": "Which IAM entity can be used for assigning permissions to multiple users?\nĐề bài: Thực thể IAM nào có thể được dùng để gán quyền cho nhiều người dùng?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "IAM User - Người dùng IAM",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "IAM Role - Vai trò IAM",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "IAM Group - Nhóm IAM",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "IAM password policy - Chính sách mật khẩu IAM",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-13",
+      "number": 13,
+      "question": "After an organization has migrated several servers into AWS, they are unsure as to what they must directly manage themselves. Which cost is the company's direct responsibility?\nĐề bài: Sau khi một tổ chức di chuyển một số máy chủ lên AWS, họ chưa rõ phần nào phải tự quản lý trực tiếp. Chi phí nào là trách nhiệm trực tiếp của công ty?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cost of the hardware infrastructure on AWS. - Chi phí hạ tầng phần cứng trên AWS.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Cost of physical security for the AWS data center. - Chi phí bảo mật vật lý cho trung tâm dữ liệu AWS.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Cost of power for the AWS servers - Chi phí điện năng cho máy chủ AWS.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Cost of application software licenses. - Chi phí giấy phép phần mềm ứng dụng.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-14",
+      "number": 14,
+      "question": "An ecommerce company is using Auto Scaling groups to manage a group of web servers running on Amazon EC2 and are additionally placed behind an Elastic Load balancer. This architecture follows which AWS Well-Architected Framework best practice?\nĐề bài: Một công ty thương mại điện tử dùng Auto Scaling Group để quản lý nhóm web server chạy trên Amazon EC2 và đặt chúng phía sau Elastic Load Balancer. Kiến trúc này tuân theo best practice nào của AWS Well-Architected Framework?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Design for failure - Thiết kế để chịu được sự cố",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Secure the workload - Bảo mật workload",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Think parallel - Tư duy song song",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Decouple infrastructure components - Tách rời các thành phần hạ tầng",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-15",
+      "number": 15,
+      "question": "Which Amazon EC2 pricing model is the most cost-effective for an always-up, right-sized database server running a project that will last 1 year?\nĐề bài: Mô hình giá Amazon EC2 nào tiết kiệm chi phí nhất cho một database server đã được chọn đúng kích thước, luôn chạy và phục vụ dự án kéo dài 1 năm?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spot Instances - Spot Instances - instance giá thấp có thể bị thu hồi",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Convertible Reserved Instances - Reserved Instances chuyển đổi linh hoạt",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "On-Demand Instances - Instance dùng theo nhu cầu",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Standard Reserved Instances - Reserved Instances tiêu chuẩn",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-16",
+      "number": 16,
+      "question": "How can a user block a suspicious IP address from connecting to an Amazon EC2 instance?\nĐề bài: Người dùng có thể chặn một địa chỉ IP đáng ngờ kết nối tới Amazon EC2 instance bằng cách nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Block the IP on the inbound rule of a network ACL. - Chặn IP trong rule inbound của network ACL.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Block the IP on the outbound rule of a security group and network ACL. - Chặn IP trong rule outbound của security group và network ACL.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Block the IP on the outbound rule of a security group. - Chặn IP trong rule outbound của security group.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Block the IP on the inbound rule of a security group and network ACL. - Chặn IP trong rule inbound của security group và network ACL.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-17",
+      "number": 17,
+      "question": "A new web application is being developed by a company. Logging into the application through a social identity provider is a must have requirement for the company. Which AWS service will meet these requirements?\nĐề bài: Một công ty đang phát triển ứng dụng web mới. Yêu cầu bắt buộc là người dùng có thể đăng nhập qua nhà cung cấp danh tính mạng xã hội. Dịch vụ AWS nào đáp ứng yêu cầu này?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon Cognito. - Dịch vụ quản lý đăng ký, đăng nhập và xác thực người dùng Amazon Cognito.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Identity and Access Management (IAM). - Dịch vụ quản lý danh tính và quyền truy cập AWS IAM.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Directory Service. - Dịch vụ thư mục AWS Directory Service.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Single Sign-On. - Dịch vụ đăng nhập một lần AWS Single Sign-On.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-18",
+      "number": 18,
+      "question": "How does the AWS global infrastructure offer high availability and fault tolerance to customers?\nĐề bài: Hạ tầng toàn cầu AWS cung cấp tính sẵn sàng cao và khả năng chịu lỗi cho khách hàng như thế nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "The AWS infrastructure consists of subnets containing various Availability Zones with multiple data centers located in the same geographic location. - Hạ tầng AWS gồm các subnet chứa nhiều Availability Zone với nhiều data center nằm trong cùng một vị trí địa lý.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "The AWS infrastructure is made up of multiple AWS Regions within various Availability Zones located in areas that have low flood risk and are interconnected with low-latency networks and redundant power supplies. - Hạ tầng AWS gồm nhiều AWS Region nằm trong các Availability Zone khác nhau, ở khu vực có rủi ro lũ thấp và được kết nối bằng mạng độ trễ thấp cùng nguồn điện dự phòng.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS allows users to choose AWS Regions and data centers so that users can select the closest data centers in different Regions. - AWS cho phép người dùng chọn AWS Region và data center để chọn các data center gần nhất ở những Region khác nhau.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "The AWS infrastructure consists of isolated AWS Regions with independent Availability Zones that are connected with low-latency networking and redundant power supplies. - Hạ tầng AWS gồm các AWS Region tách biệt với các Availability Zone độc lập, được kết nối bằng mạng độ trễ thấp và nguồn điện dự phòng.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-19",
+      "number": 19,
+      "question": "Are there any AWS services or features that will identify and search for externally shared AWS resources?\nĐề bài: Có dịch vụ hoặc tính năng AWS nào giúp xác định và tìm kiếm các tài nguyên AWS đang được chia sẻ ra bên ngoài không?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS IAM Access Analyzer. - Công cụ phân tích truy cập AWS IAM Access Analyzer.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Fargate. - Dịch vụ chạy container serverless AWS Fargate.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon OpenSearch Service (Amazon Elasticsearch Service). - Dịch vụ tìm kiếm và phân tích Amazon OpenSearch Service, trước đây là Amazon Elasticsearch Service.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Control Tower. - Dịch vụ thiết lập và quản trị môi trường nhiều tài khoản AWS Control Tower.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-20",
+      "number": 20,
+      "question": "Which AWS service or feature can be used to capture information about inbound and outbound IP traffic on network interfaces in a VPC?\nĐề bài: Dịch vụ hoặc tính năng AWS nào có thể được dùng để ghi lại thông tin về lưu lượng IP vào và ra trên các network interface trong VPC?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "VPC Endpoint - VPC Endpoint - điểm kết nối riêng tới dịch vụ AWS",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "VPC Flow Logs - VPC Flow Logs - nhật ký lưu lượng mạng trong VPC",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Internet gateway - Internet gateway - cổng kết nối Internet cho VPC",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS CloudTrail - Dịch vụ ghi nhận và kiểm tra hoạt động API AWS CloudTrail",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-21",
+      "number": 21,
+      "question": "To gain greater discounts, which services can be reserved? (Select TWO.)\nĐề bài: Để nhận mức chiết khấu cao hơn, những dịch vụ nào có thể đặt trước dung lượng? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Lambda - Dịch vụ chạy mã serverless AWS Lambda",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon DynamoDB - Dịch vụ cơ sở dữ liệu NoSQL Amazon DynamoDB",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon S3 - Dịch vụ lưu trữ đối tượng Amazon S3",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon CloudWatch - Dịch vụ giám sát Amazon CloudWatch",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Amazon RedShift - Dịch vụ kho dữ liệu Amazon Redshift",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "E"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-22",
+      "number": 22,
+      "question": "How does Amazon CloudFront deliver content to end users with low latency using the AWS global infrastructure?\nĐề bài: Amazon CloudFront phân phối nội dung tới người dùng cuối với độ trễ thấp bằng hạ tầng toàn cầu AWS như thế nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Availability Zones - Các Availability Zone / Vùng sẵn sàng",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Direct Connect connections - Các kết nối AWS Direct Connect",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Edge locations - Các edge location / vị trí biên",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Regions - Các AWS Region / khu vực AWS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-23",
+      "number": 23,
+      "question": "Which service can be used to easily create multiple accounts?\nĐề bài: Dịch vụ nào có thể được dùng để tạo nhiều tài khoản một cách dễ dàng?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS CloudFormation - Dịch vụ triển khai hạ tầng dưới dạng mã AWS CloudFormation",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Organizations - Dịch vụ quản lý nhiều tài khoản AWS Organizations",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS IAM - Dịch vụ quản lý danh tính và quyền truy cập AWS IAM",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Connect - Dịch vụ tổng đài liên hệ Amazon Connect",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-24",
+      "number": 24,
+      "question": "Which AWS service provides on-demand downloads of AWS security and compliance reports?\nĐề bài: Dịch vụ AWS nào cung cấp khả năng tải xuống theo yêu cầu các báo cáo bảo mật và tuân thủ của AWS?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Directory Service - Dịch vụ thư mục AWS Directory Service",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Artifact - Dịch vụ cung cấp báo cáo tuân thủ và thỏa thuận AWS Artifact",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Inspector - Dịch vụ đánh giá bảo mật tự động Amazon Inspector",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Trusted Advisor - Công cụ tư vấn và khuyến nghị tối ưu AWS Trusted Advisor",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-25",
+      "number": 25,
+      "question": "AWS Global Infrastructure consists of which of the following components?\nĐề bài: Hạ tầng toàn cầu AWS bao gồm thành phần nào sau đây?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Organizations - Dịch vụ quản lý nhiều tài khoản AWS Organizations",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Alexa - Trợ lý ảo Amazon Alexa",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon LightSail - Dịch vụ máy chủ ảo đơn giản Amazon Lightsail",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Regions - Các AWS Region / khu vực AWS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-26",
+      "number": 26,
+      "question": "Which of the following are advantages of the AWS Cloud? (Select TWO.)\nĐề bài: Điều nào sau đây là lợi ích của AWS Cloud? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Overprovision to ensure capacity. - Cấp phát dư tài nguyên để đảm bảo đủ capacity.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Focus on managing hardware infrastructure. - Tập trung vào quản lý hạ tầng phần cứng.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Launch globally in minutes. - Triển khai toàn cầu chỉ trong vài phút.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Trade variable expenses for capital expenses. - Đổi chi phí biến đổi lấy chi phí đầu tư ban đầu.",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "High economies of scale. - Lợi thế kinh tế theo quy mô cao.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C",
+        "E"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-27",
+      "number": 27,
+      "question": "It is important for users to have access to as many resources as they need. Also, the user needs the ability to scale up and down quickly. These capabilities are described by which AWS Cloud benefits?\nĐề bài: Người dùng cần truy cập đúng lượng tài nguyên họ cần và có khả năng tăng/giảm quy mô nhanh chóng. Những khả năng này mô tả lợi ích nào của AWS Cloud?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elasticity - Tính đàn hồi / khả năng co giãn tài nguyên",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Economy of scale - Lợi thế kinh tế theo quy mô",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Reliability - Độ tin cậy",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Pay-as-you-go pricing - Mô hình trả tiền theo mức sử dụng",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-28",
+      "number": 28,
+      "question": "Which AWS tools can be used for automation? (Select TWO.)\nĐề bài: Công cụ AWS nào có thể được dùng cho tự động hóa? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elastic Load Balancing - Dịch vụ cân bằng tải Elastic Load Balancing",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Lambda - Dịch vụ chạy mã serverless AWS Lambda",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Elastic File System (EFS) - Dịch vụ hệ thống tệp đàn hồi Amazon EFS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS CloudFormation - Dịch vụ triển khai hạ tầng dưới dạng mã AWS CloudFormation",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "AWS Elastic Beanstalk - Dịch vụ triển khai và mở rộng ứng dụng AWS Elastic Beanstalk",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D",
+        "E"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-29",
+      "number": 29,
+      "question": "Which service allows an organization to view operational data from multiple AWS services through a unified user interface and automate operational tasks?\nĐề bài: Dịch vụ nào cho phép tổ chức xem dữ liệu vận hành từ nhiều dịch vụ AWS thông qua một giao diện thống nhất và tự động hóa các tác vụ vận hành?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon CloudWatch - Dịch vụ giám sát Amazon CloudWatch",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Config - Dịch vụ theo dõi và đánh giá cấu hình tài nguyên AWS Config",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS OpsWorks - Dịch vụ quản lý cấu hình AWS OpsWorks",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Systems Manager - Dịch vụ quản lý hệ thống AWS Systems Manager",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-30",
+      "number": 30,
+      "question": "A company has a mission critical Linux-based application. The application must run every Monday from 6 AM until 10pm. As the application is critical, it cannot be interrupted. Which Amazon EC2 instance purchasing option meets these requirements MOST cost-effectively?\nĐề bài: Một công ty có ứng dụng Linux quan trọng, phải chạy vào mỗi thứ Hai từ 6 giờ sáng đến 10 giờ tối. Vì ứng dụng rất quan trọng nên không được gián đoạn. Tùy chọn mua Amazon EC2 nào đáp ứng yêu cầu này tiết kiệm chi phí nhất?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "On-Demand Capacity Reservation with Savings Plan - Đặt trước capacity theo nhu cầu kết hợp Savings Plan",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Regional Reserved Instances - Reserved Instances theo Region",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Dedicated Hosts - Máy chủ vật lý chuyên dụng Dedicated Hosts",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Spot Instances - Spot Instances - instance giá thấp có thể bị thu hồi",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-31",
+      "number": 31,
+      "question": "A company has a website that delivers static content from an Amazon S3 bucket to users from around the world. Which AWS service will deliver the content with low latency?\nĐề bài: Một công ty có website phân phối nội dung tĩnh từ Amazon S3 bucket tới người dùng trên toàn thế giới. Dịch vụ AWS nào sẽ phân phối nội dung với độ trễ thấp?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Elastic Beanstalk - Dịch vụ triển khai và mở rộng ứng dụng AWS Elastic Beanstalk",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Global Accelerator - Dịch vụ tăng tốc truy cập toàn cầu AWS Global Accelerator",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Lambda - Dịch vụ chạy mã serverless AWS Lambda",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon CloudFront - Mạng phân phối nội dung Amazon CloudFront",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-32",
+      "number": 32,
+      "question": "Which AWS service can be used to track the activity of users on AWS?\nĐề bài: Dịch vụ AWS nào có thể được dùng để theo dõi hoạt động của người dùng trên AWS?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon CloudWatch - Dịch vụ giám sát Amazon CloudWatch",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Directory Service - Dịch vụ thư mục AWS Directory Service",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Inspector - Dịch vụ đánh giá bảo mật tự động Amazon Inspector",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS CloudTrail - Dịch vụ ghi nhận và kiểm tra hoạt động API AWS CloudTrail",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-33",
+      "number": 33,
+      "question": "A company has many different business units all using the same AWS services to manage their different applications. Which AWS service or tool can the company use to receive volume discounts across multiple AWS accounts?\nĐề bài: Một công ty có nhiều đơn vị kinh doanh cùng sử dụng các dịch vụ AWS để quản lý các ứng dụng khác nhau. Công ty có thể dùng dịch vụ hoặc công cụ AWS nào để nhận chiết khấu theo sản lượng trên nhiều tài khoản AWS?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Cost and Usage Report - Báo cáo chi phí và mức sử dụng AWS Cost and Usage Report",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Budgets - Dịch vụ lập ngân sách và cảnh báo chi phí AWS Budgets",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Organizations - Dịch vụ quản lý nhiều tài khoản AWS Organizations",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Cost Explorer - Công cụ phân tích chi phí AWS Cost Explorer",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-34",
+      "number": 34,
+      "question": "What AWS service decouples application components so that they can run independently?\nĐề bài: Dịch vụ AWS nào giúp tách rời các thành phần ứng dụng để chúng có thể chạy độc lập?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon Simple Notification Service (Amazon SNS) - Dịch vụ thông báo đơn giản Amazon SNS",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Glue - Dịch vụ tích hợp và ETL dữ liệu AWS Glue",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Simple Queue Service (Amazon SQS) - Dịch vụ hàng đợi tin nhắn Amazon SQS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Simple Workflow Service (Amazon SWF) - Dịch vụ điều phối workflow Amazon SWF",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-35",
+      "number": 35,
+      "question": "An organization moves a workload to Amazon EC2 instances on AWS. Cost-effectiveness is the key to running the workload properly in the Cloud. What can the company do to meet this requirement?\nĐề bài: Một tổ chức chuyển workload sang Amazon EC2 trên AWS. Hiệu quả chi phí là yếu tố then chốt để vận hành workload trong Cloud. Công ty nên làm gì để đáp ứng yêu cầu này?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rightsize all the EC2 instances that are used in the deployment - Chọn đúng kích thước cho toàn bộ EC2 instance được dùng trong triển khai",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Use AWS CloudFormation to deploy the infrastructure. - Dùng AWS CloudFormation để triển khai hạ tầng.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Use AWS Key Management Service (AWS KMS). - Dùng dịch vụ quản lý khóa AWS KMS.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Use multiple AWS accounts and consolidated billing. - Dùng nhiều tài khoản AWS và thanh toán hợp nhất.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-36",
+      "number": 36,
+      "question": "Which AWS services are associated with Edge Locations? (Select TWO.)\nĐề bài: Những dịch vụ AWS nào liên quan đến Edge Location? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon EBS - Dịch vụ lưu trữ khối Amazon EBS",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Config - Dịch vụ theo dõi và đánh giá cấu hình tài nguyên AWS Config",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon CloudFront - Mạng phân phối nội dung Amazon CloudFront",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Shield - Dịch vụ bảo vệ chống tấn công DDoS AWS Shield",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "AWS Direct Connect - Dịch vụ kết nối trực tiếp AWS Direct Connect",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C",
+        "D"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-37",
+      "number": 37,
+      "question": "An Amazon EC2 instance running the Amazon Linux 2 AMI is billed in what increment?\nĐề bài: Một Amazon EC2 instance chạy Amazon Linux 2 AMI được tính phí theo đơn vị nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Per CPU - Theo từng CPU",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Per second - Theo từng giây",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Per GB - Theo từng GB",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Per hour - Theo từng giờ",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-38",
+      "number": 38,
+      "question": "Which AWS service provides a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser, without needing to install any software or configure servers?\nĐề bài: Dịch vụ AWS nào cung cấp môi trường phát triển tích hợp (IDE) trên cloud, cho phép viết, chạy và debug mã chỉ bằng trình duyệt mà không cần cài phần mềm hoặc cấu hình máy chủ?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Cloud9 - Môi trường phát triển tích hợp trên cloud AWS Cloud9",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS CodeStar - Dịch vụ hỗ trợ phát triển và triển khai ứng dụng AWS CodeStar",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS CodeBuild - Dịch vụ build và kiểm thử mã nguồn AWS CodeBuild",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon WorkSpaces - Dịch vụ máy tính để bàn ảo Amazon WorkSpaces",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-39",
+      "number": 39,
+      "question": "A user needs a quick way to determine if any Amazon EC2 instances have ports that allow unrestricted access. Which AWS service will support this requirement?\nĐề bài: Người dùng cần cách nhanh để xác định liệu có Amazon EC2 instance nào có cổng cho phép truy cập không giới hạn hay không. Dịch vụ AWS nào hỗ trợ yêu cầu này?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS CloudWatch Logs - Dịch vụ nhật ký Amazon CloudWatch Logs",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Shield - Dịch vụ bảo vệ chống tấn công DDoS AWS Shield",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Trusted Advisor - Công cụ tư vấn và khuyến nghị tối ưu AWS Trusted Advisor",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "VPC Flow Logs - VPC Flow Logs - nhật ký lưu lượng mạng trong VPC",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-40",
+      "number": 40,
+      "question": "An organization recently migrated to AWS and wants to enable intelligent threat protection and continuous monitoring across all its accounts. Which AWS service should the company use to achieve this goal?\nĐề bài: Một tổ chức vừa di chuyển lên AWS và muốn bật bảo vệ mối đe dọa thông minh cùng giám sát liên tục trên tất cả tài khoản. Công ty nên dùng dịch vụ AWS nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon Detective - Dịch vụ điều tra bảo mật Amazon Detective",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon GuardDuty - Dịch vụ phát hiện mối đe dọa Amazon GuardDuty",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Shield - Dịch vụ bảo vệ chống tấn công DDoS AWS Shield",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Macie - Dịch vụ phát hiện và bảo vệ dữ liệu nhạy cảm Amazon Macie",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-41",
+      "number": 41,
+      "question": "A company has 50 different business units and requires that each business unit's billing information is viewed separately. What should a cloud practitioner recommend?\nĐề bài: Một công ty có 50 đơn vị kinh doanh khác nhau và yêu cầu thông tin thanh toán của từng đơn vị được xem riêng biệt. Cloud Practitioner nên khuyến nghị gì?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Place each business unit in a different AWS Region, then filter by unit in Cost Explorer. - Đặt mỗi đơn vị kinh doanh ở một AWS Region khác nhau, sau đó lọc theo đơn vị trong Cost Explorer.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Use separate AWS accounts for each business unit, then filter by unit using the coverage report. - Dùng tài khoản AWS riêng cho từng đơn vị kinh doanh, sau đó lọc theo đơn vị bằng coverage report.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Use a different VPC for each business unit, then filter by unit using an AWS Cost and Usage Report. - Dùng một VPC khác nhau cho từng đơn vị kinh doanh, sau đó lọc theo đơn vị bằng AWS Cost and Usage Report.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Tag each business unit's resources, then filter by unit in Cost Explorer. - Gắn tag cho tài nguyên của từng đơn vị kinh doanh, sau đó lọc theo đơn vị trong Cost Explorer.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-42",
+      "number": 42,
+      "question": "Which AWS service or feature can be used to restrict the individual API actions that users and roles in each member account can access?\nĐề bài: Dịch vụ hoặc tính năng AWS nào có thể được dùng để giới hạn từng hành động API mà người dùng và role trong mỗi tài khoản thành viên được phép truy cập?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Shield - Dịch vụ bảo vệ chống tấn công DDoS AWS Shield",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS IAM - Dịch vụ quản lý danh tính và quyền truy cập AWS IAM",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Organizations - Dịch vụ quản lý nhiều tài khoản AWS Organizations",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Macie - Dịch vụ phát hiện và bảo vệ dữ liệu nhạy cảm Amazon Macie",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-43",
+      "number": 43,
+      "question": "Which authentication method is used to authenticate programmatic calls to AWS services?\nĐề bài: Phương thức xác thực nào được dùng để xác thực các lệnh gọi lập trình tới dịch vụ AWS?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Access keys - Access key",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Console password - Mật khẩu đăng nhập console",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Server certificate - Chứng chỉ máy chủ",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Key pair - Cặp khóa",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-44",
+      "number": 44,
+      "question": "A company needs to invoke an AWS Step Functions workflow each time an Amazon EC2 instance state changes. Which AWS service can the company use to meet this requirement?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon SageMaker - Dịch vụ machine learning Amazon SageMaker",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Connect - Dịch vụ tổng đài liên hệ Amazon Connect",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Fargate - Dịch vụ chạy container serverless AWS Fargate",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon EventBridge - Dịch vụ bus sự kiện Amazon EventBridge",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-45",
+      "number": 45,
+      "question": "Which of the following is an advantage of AWS Cloud computing?\nĐề bài: Điều nào của following là mộtn advantage của AWS cloud computing?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trade operational excellence for agility. - Đánh đổi vận hành xuất sắc để lấy tính linh hoạt.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Trade security for elasticity. - Đánh đổi bảo mật để lấy tính đàn hồi.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Trade fixed expenses for variable expenses. - Chuyển chi phí cố định thành chi phí biến đổi.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Trade elasticity for performance. - Đánh đổi tính đàn hồi để lấy hiệu suất.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-46",
+      "number": 46,
+      "question": "Which AWS service or VPC component allows inbound traffic from the internet to access a VPC?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "NAT Gateway - NAT Gateway - cổng NAT",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Virtual Private Gateway - Virtual Private Gateway - cổng kết nối VPN phía AWS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "VPC Route Table - Bảng định tuyến VPC",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Internet gateway - Internet gateway - cổng kết nối Internet cho VPC",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-47",
+      "number": 47,
+      "question": "A company plans to connect their on-premises data center to the AWS Cloud and requires consistent bandwidth and performance. Which AWS service should the company choose?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon CloudFront - Mạng phân phối nội dung Amazon CloudFront",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Connect - Dịch vụ tổng đài liên hệ Amazon Connect",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Direct Connect - Dịch vụ kết nối trực tiếp AWS Direct Connect",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS VPN - Dịch vụ VPN của AWS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-48",
+      "number": 48,
+      "question": "A company has been using an AWS managed IAM policy for granting permissions to users but needs to add some permissions. How can this be achieved?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Create a rule in AWS WAF. - Tạo một rule trong AWS WAF.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Create a Service Control Policy. - Tạo Service Control Policy.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Create a custom IAM policy. - Tạo một IAM policy tùy chỉnh.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Edit the AWS managed policy. - Chỉnh sửa AWS managed policy.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-49",
+      "number": 49,
+      "question": "What are the benefits of using reserved instances? (Select TWO.)\nĐề bài: Điều gì là lợi ích của bằng cách dùng reserved instances? (Select TWO.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Uses dedicated hardware - Sử dụng phần cứng chuyên dụng",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Reduced cost - Giảm chi phí",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "More flexibility - Linh hoạt hơn",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "High availability - Tính sẵn sàng cao",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Reserve capacity - Đặt trước capacity",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "E"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-50",
+      "number": 50,
+      "question": "How can an organization track resource inventory and configuration history for the purpose of security and regulatory compliance?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Run a report with AWS Artifact - Chạy báo cáo bằng AWS Artifact",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Create an Amazon CloudTrail trail - Tạo một trail trong Amazon CloudTrail",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Implement Amazon GuardDuty - Triển khai Amazon GuardDuty",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Configure AWS Config with the resource types - Cấu hình AWS Config với các loại tài nguyên cần theo dõi",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-51",
+      "number": 51,
+      "question": "A security operations engineer needs to implement threat detection and monitoring for malicious or unauthorized behavior. Which service should be used?\nĐề bài: A bảo mật operations engineer needs tới implement mối đe dọa detection và giám sát cho độc hại hoặc trái phép behavior. Điều nào dịch vụ nên được dùng?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Shield - Dịch vụ bảo vệ chống tấn công DDoS AWS Shield",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS KMS - Dịch vụ quản lý khóa AWS KMS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS CloudHSM - Dịch vụ mô-đun bảo mật phần cứng AWS CloudHSM",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon GuardDuty - Dịch vụ phát hiện mối đe dọa Amazon GuardDuty",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-52",
+      "number": 52,
+      "question": "Which pillar of the AWS Well-Architected Framework includes the design principle of defining workloads, applications, and infrastructure as code (IaC)?\nĐề bài: Điều nào pillar của AWS Well-Architected Framework includes design principle của defining workload, ứng dụng, và hạ tầng vì/như mã (IaC)?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reliability - Độ tin cậy",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Performance efficiency - Hiệu quả hiệu năng",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Security - Bảo mật",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Operational excellence - Vận hành xuất sắc",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-53",
+      "number": 53,
+      "question": "Which AWS services facilitate building secure and scalable mobile and web applications, offering features such as real-time updates and offline functionalities? (Select TWO.)\nĐề bài: Điều nào AWS dịch vụs facilitate building bảo mật và scalable mobile và web ứng dụng, offering features such vì/như thời gian thực updates và offline functionalities? (Select TWO.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon API Gateway - Dịch vụ quản lý API Amazon API Gateway",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS AppSync - Dịch vụ xây dựng API GraphQL AWS AppSync",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Lambda - Dịch vụ chạy mã serverless AWS Lambda",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Amplify - Bộ công cụ phát triển ứng dụng web/mobile AWS Amplify",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "AWS CodeDeploy - Dịch vụ triển khai mã AWS CodeDeploy",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "D"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-54",
+      "number": 54,
+      "question": "A company currently uses a Security Assertion Markup Language (SAML) based application to log in to third-party business applications and would like to have this hosted in AWS using managed services. Which AWS service will meet this requirement?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Identity and Access Management (IAM). - Dịch vụ quản lý danh tính và quyền truy cập AWS IAM.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Cognito. - Dịch vụ quản lý đăng ký, đăng nhập và xác thực người dùng Amazon Cognito.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS CLI. - Giao diện dòng lệnh AWS CLI.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Single Sign-On. - Dịch vụ đăng nhập một lần AWS Single Sign-On.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-55",
+      "number": 55,
+      "question": "AWS Direct Connect is used by a company that wants to establish connectivity across multiple AWS Regions using VPCs. Which AWS service or feature should the company use to meet these requirements?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Transit Gateway - Cổng kết nối trung chuyển AWS Transit Gateway",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS PrivateLink - Dịch vụ kết nối riêng AWS PrivateLink",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Connect - Dịch vụ tổng đài liên hệ Amazon Connect",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Route 53 - Dịch vụ DNS Amazon Route 53",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-56",
+      "number": 56,
+      "question": "How does Amazon EC2 Auto Scaling help with resiliency?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "By distributing connections to EC2 instances - Bằng cách phân phối kết nối tới các EC2 instance",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "By changing instance types to increase capacity - Bằng cách thay đổi loại instance để tăng capacity",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "By launching and terminating instances as needed - Bằng cách khởi chạy và chấm dứt instance khi cần",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "By automating the failover of applications - Bằng cách tự động hóa việc failover của ứng dụng",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-57",
+      "number": 57,
+      "question": "Which IAM entity is associated with an access key ID and secret access key?\nĐề bài: Điều nào IAM entity là mộtssociated với một truy cập key ID và secret truy cập key?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "IAM User - Người dùng IAM",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "IAM Role - Vai trò IAM",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "IAM Group - Nhóm IAM",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "IAM Policy - Chính sách IAM",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-58",
+      "number": 58,
+      "question": "Which of the following are advantages of the AWS Cloud? (Select TWO.)\nĐề bài: Điều nào sau đây là lợi ích của AWS Cloud? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expenses never change from month to month. - Chi phí không bao giờ thay đổi giữa các tháng.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS manages all the security within the cloud. - AWS quản lý toàn bộ bảo mật bên trong cloud.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Users can stop guessing about resource capacity. - Người dùng không cần phải phỏng đoán capacity tài nguyên.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Users can stop spending money on the maintenance of data centers. - Người dùng không cần tiếp tục chi tiền để bảo trì trung tâm dữ liệu.",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Users do not need to deploy applications globally. - Người dùng không cần triển khai ứng dụng toàn cầu.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C",
+        "D"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-59",
+      "number": 59,
+      "question": "A company needs to optimize costs and resource usage through monitoring of operational health for all resources running on AWS. Which AWS service will meet these requirements?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Control Tower - Dịch vụ quản trị môi trường nhiều tài khoản AWS Control Tower",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Config - Dịch vụ theo dõi và đánh giá cấu hình tài nguyên AWS Config",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS CloudTrail - Dịch vụ ghi nhận và kiểm tra hoạt động API AWS CloudTrail",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon CloudWatch - Dịch vụ giám sát Amazon CloudWatch",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-60",
+      "number": 60,
+      "question": "An organization is considering implementing a new workload in the AWS Cloud. However, the company first wants to forecast costs. Which tool should the company use to estimate the cost of the workload?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Billing and Cost Management dashboard. - Bảng điều khiển AWS Billing and Cost Management.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Cost and Usage Report. - Báo cáo AWS Cost and Usage Report.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Pricing Calculator. - Công cụ ước tính chi phí AWS Pricing Calculator.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Cost Explorer. - Công cụ phân tích chi phí Cost Explorer.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-61",
+      "number": 61,
+      "question": "A company requires a single service which can manage their backup and restore requirements, their data lakes, and archives all in one place. Which AWS service is suitable for all these use cases?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon Elastic Block Store (Amazon EBS). - Dịch vụ lưu trữ khối Amazon EBS.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Elastic File System (Amazon EFS). - Dịch vụ hệ thống tệp đàn hồi Amazon EFS.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon FSx for Lustre. - Dịch vụ hệ thống tệp hiệu năng cao Amazon FSx for Lustre.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Simple Storage Service (Amazon S3). - Dịch vụ lưu trữ đối tượng Amazon S3.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-62",
+      "number": 62,
+      "question": "What is a specific benefit of an Enterprise Support plan?\nĐề bài: Điều gì là một specific lợi ích của một Enterprise Support plan?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Included AWS Solutions Architect - Bao gồm AWS Solutions Architect",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Included Cloud Support Associate - Bao gồm Cloud Support Associate",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Included Technical Support Manager - Bao gồm Technical Support Manager",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Included Technical Account Manager - Bao gồm Technical Account Manager",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-63",
+      "number": 63,
+      "question": "Which AWS service helps you deploy application configuration changes with features like validation checks and timely deployment while avoiding the need to write additional code or restart application services?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS AppConfig - Dịch vụ quản lý cấu hình ứng dụng AWS AppConfig",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS CodeCommit - Dịch vụ quản lý mã nguồn AWS CodeCommit",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS CodeStar - Dịch vụ hỗ trợ phát triển và triển khai ứng dụng AWS CodeStar",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS CloudFormation - Dịch vụ triển khai hạ tầng dưới dạng mã AWS CloudFormation",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-64",
+      "number": 64,
+      "question": "Your CTO wants to move to cloud. What cost advantages are there to moving to cloud?\nĐề bài: \nVui lòng xem câu hỏi tiếng Anh phía trên. Nội dung câu hỏi yêu cầu chọn dịch vụ, tính năng hoặc nguyên tắc AWS phù hợp nhất với tình huống đã nêu.",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "You get free data transfer into and out of the cloud - Bạn được miễn phí truyền dữ liệu vào và ra khỏi cloud",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "You can reduce your marketing costs - Bạn có thể giảm chi phí marketing",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "You provision only what you need and adjust to peak load - Bạn chỉ cấp phát những gì cần dùng và điều chỉnh theo tải cao điểm",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "You don’t need to pay for application licensing - Bạn không cần trả phí bản quyền ứng dụng",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-65",
+      "number": 65,
+      "question": "Under the AWS shared responsibility model, which of the following is an example of customer responsibility in the AWS Cloud?\nĐề bài: Under AWS shared responsibility model, nào của following là mộtn example của customer responsibility trong AWS cloud?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Firewall conﬁguration - Cấu hình tường lửa",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Global infrastructure - Hạ tầng toàn cầu",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Physical security - Bảo mật vật lý",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Physical security - Bảo mật vật lý",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-66",
+      "number": 66,
+      "question": "A company needs to use third-party software for its workload on AWS. Is there a feature or service of AWS that the company can use to purchase the software?\nĐề bài: Một công ty cần dùng phần mềm bên thứ ba cho workload trên AWS. AWS có tính năng hoặc dịch vụ nào để công ty mua phần mềm này không?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Marketplace - Chợ phần mềm AWS Marketplace",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Resource Access Manager - Dịch vụ chia sẻ tài nguyên AWS Resource Access Manager",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS License Manager - Dịch vụ quản lý giấy phép AWS License Manager",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Managed Services - Dịch vụ quản trị được quản lý AWS Managed Services",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-67",
+      "number": 67,
+      "question": "Amazon S3 is typically used for which of the following use cases? (Select TWO.)\nĐề bài: Amazon S3 thường được dùng cho trường hợp sử dụng nào sau đây? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Media hosting - Lưu trữ nội dung media",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Install an operating system - Cài đặt hệ điều hành",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "In-memory data cache - Bộ nhớ đệm dữ liệu trong bộ nhớ",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Message queue - Hàng đợi tin nhắn",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Host a static website - Lưu trữ website tĩnh",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "E"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-68",
+      "number": 68,
+      "question": "Which of the statements below is correct in relation to Consolidated Billing? (Select TWO.)\nĐề bài: Phát biểu nào dưới đây đúng về Consolidated Billing? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "You receive one bill per AWS account - Nhận một hóa đơn cho mỗi tài khoản AWS",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "You pay a fee per linked account - Phải trả phí cho mỗi tài khoản liên kết",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "You receive a single bill for multiple accounts - Nhận một hóa đơn duy nhất cho nhiều tài khoản",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "You are charged a fee per user - Bị tính phí theo từng người dùng",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "You can combine usage and share volume pricing discounts - Có thể gộp mức sử dụng và chia sẻ chiết khấu theo khối lượng",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C",
+        "E"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-69",
+      "number": 69,
+      "question": "A company needs a consistent and dedicated connection between AWS resources and an on-premise system. Which AWS service can fulfill this requirement?\nĐề bài: Một công ty cần kết nối ổn định và chuyên dụng giữa tài nguyên AWS và hệ thống on-premises. Dịch vụ AWS nào đáp ứng yêu cầu này?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Managed VPN - Dịch vụ VPN được AWS quản lý",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Connect - Dịch vụ trung tâm liên hệ Amazon Connect",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS DataSync - Dịch vụ đồng bộ và di chuyển dữ liệu AWS DataSync",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Direct Connect - Dịch vụ kết nối riêng trực tiếp AWS Direct Connect",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-70",
+      "number": 70,
+      "question": "What can be used to allow an application running on an Amazon EC2 instance to securely store data in an Amazon S3 bucket without using long-term credentials?\nĐề bài: Có thể dùng gì để cho phép ứng dụng chạy trên Amazon EC2 instance lưu dữ liệu an toàn vào Amazon S3 bucket mà không dùng thông tin xác thực dài hạn?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS IAM access key - Access key của AWS IAM",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Connect - Dịch vụ trung tâm liên hệ Amazon Connect",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Systems Manager - Dịch vụ quản lý hệ thống AWS Systems Manager",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS IAM role - IAM role của AWS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-71",
+      "number": 71,
+      "question": "Which cloud architecture design principle is supported by deploying workloads across multiple Availability Zones?\nĐề bài: Nguyên tắc thiết kế kiến trúc cloud nào được hỗ trợ khi triển khai workload trên nhiều Availability Zone?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Design for failure. - Thiết kế để chịu được sự cố.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Automate infrastructure. - Tự động hóa hạ tầng.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Enable elasticity. - Bật khả năng co giãn.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Design for agility. - Thiết kế để tăng tính linh hoạt.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-72",
+      "number": 72,
+      "question": "A Cloud Practitioner is re-architecting a monolithic application. Which design principles for cloud architecture do AWS recommend? (Select TWO.)\nĐề bài: Một Cloud Practitioner đang tái kiến trúc ứng dụng nguyên khối. AWS khuyến nghị nguyên tắc thiết kế kiến trúc cloud nào? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Use self-managed servers. - Sử dụng máy chủ tự quản lý.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Design for scalability. - Thiết kế để có khả năng mở rộng.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Implement loose coupling. - Triển khai kiến trúc liên kết lỏng lẻo.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Implement manual scalability. - Mở rộng thủ công.",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Rely on individual components. - Phụ thuộc vào các thành phần đơn lẻ.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "C"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-73",
+      "number": 73,
+      "question": "Which AWS hybrid storage service enables a user’s on-premises applications to seamlessly use AWS Cloud storage?\nĐề bài: Dịch vụ lưu trữ lai AWS nào cho phép ứng dụng on-premises sử dụng AWS Cloud storage một cách liền mạch?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Backup - Dịch vụ sao lưu AWS Backup",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Storage Gateway - Dịch vụ lưu trữ lai AWS Storage Gateway",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Connect - Dịch vụ trung tâm liên hệ Amazon Connect",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Direct Connect - Dịch vụ kết nối riêng trực tiếp AWS Direct Connect",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-74",
+      "number": 74,
+      "question": "According to the AWS Shared responsibility model, which two tasks are the responsibility of AWS? (Select TWO.)\nĐề bài: Theo mô hình trách nhiệm chia sẻ của AWS, hai tác vụ nào thuộc trách nhiệm của AWS? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Patch the operating system of Amazon S3. - Vá hệ điều hành của Amazon S3.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Provide physical security for Availability Zones. - Đảm bảo an ninh vật lý cho các Availability Zone.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Perform identity and access management. - Thực hiện quản lý danh tính và truy cập.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Encrypt client-side data and authenticate data integrity. - Mã hóa dữ liệu phía client và xác thực tính toàn vẹn dữ liệu.",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Manage customer data. - Quản lý dữ liệu của khách hàng.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-75",
+      "number": 75,
+      "question": "A corporation with multiple departments each having their own AWS accounts wants to implement a solution to customize billing data to match their specific showback or chargeback business logic. They wish to group accounts with similar financial owners and generate a distinct Cost and Usage Report (CUR) for each group. Which AWS service should they use to meet these requirements?\nĐề bài: Một tập đoàn có nhiều phòng ban, mỗi phòng ban có tài khoản AWS riêng, muốn tùy chỉnh dữ liệu hóa đơn theo logic showback/chargeback, nhóm các tài khoản có cùng chủ sở hữu tài chính và tạo Cost and Usage Report riêng cho từng nhóm. Dịch vụ AWS nào đáp ứng yêu cầu này?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Billing Conductor - Dịch vụ tùy chỉnh hóa đơn AWS Billing Conductor",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Billing and Cost Management - Bộ công cụ quản lý hóa đơn và chi phí AWS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Budgets - Dịch vụ lập ngân sách và cảnh báo chi phí AWS Budgets",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Cost Explorer - Công cụ phân tích chi phí AWS Cost Explorer",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-76",
+      "number": 76,
+      "question": "What can a Cloud Practitioner use the AWS Total Cost of Ownership (TCO) Calculator for?\nĐề bài: Cloud Practitioner có thể dùng AWS Total Cost of Ownership (TCO) Calculator để làm gì?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Estimate savings when comparing the AWS Cloud to an on-premises environment - Ước tính khoản tiết kiệm khi so sánh AWS Cloud với môi trường tại chỗ",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Estimate a monthly bill for the AWS Cloud resources that will be used - Ước tính hóa đơn hằng tháng cho tài nguyên AWS Cloud sẽ sử dụng",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Enable billing alerts to monitor actual AWS costs compared to estimated costs - Bật cảnh báo hóa đơn để theo dõi chi phí thực tế so với chi phí ước tính",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Generate reports that break down AWS Cloud compute costs by duration, resource, or tags - Tạo báo cáo phân tách chi phí điện toán AWS theo thời gian, tài nguyên hoặc thẻ",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-77",
+      "number": 77,
+      "question": "Which AWS service can be used to perform data extract, transform, and load (ETL) operations so you can prepare data for analytics?\nĐề bài: Dịch vụ AWS nào dùng để thực hiện các thao tác trích xuất, chuyển đổi và nạp dữ liệu (ETL) nhằm chuẩn bị dữ liệu cho phân tích?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon S3 Select - Tính năng Amazon S3 Select",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon QuickSight - Dịch vụ phân tích kinh doanh Amazon QuickSight",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Athena - Dịch vụ truy vấn dữ liệu Amazon Athena",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Glue - Dịch vụ tích hợp dữ liệu và ETL AWS Glue",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-78",
+      "number": 78,
+      "question": "A new e-commerce company is looking for an AWS service to send transactional emails, such as order confirmations and password resets, to their customers. Which AWS service would be most appropriate for this task?\nĐề bài: Một công ty thương mại điện tử mới cần dịch vụ AWS để gửi email giao dịch như xác nhận đơn hàng và đặt lại mật khẩu cho khách hàng. Dịch vụ nào phù hợp nhất?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon Simple Email Service (Amazon SES) - Dịch vụ gửi email Amazon SES",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Simple Queue Service (Amazon SQS) - Dịch vụ hàng đợi tin nhắn Amazon SQS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Simple Notification Service (Amazon SNS) - Dịch vụ thông báo Amazon SNS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Elastic Compute Cloud (Amazon EC2) - Dịch vụ máy chủ ảo Amazon EC2",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-79",
+      "number": 79,
+      "question": "What is the function of Amazon EC2 Auto Scaling?\nĐề bài: Chức năng của Amazon EC2 Auto Scaling là gì?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Automatically updates the EC2 pricing model, based on demand. - Tự động cập nhật mô hình giá EC2 theo nhu cầu.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Scales the size of EC2 instances up or down automatically, based on demand. - Tự động tăng hoặc giảm kích thước EC2 instance theo nhu cầu.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Scales the number of EC2 instances in or out automatically, based on demand. - Tự động tăng hoặc giảm số lượng EC2 instance theo nhu cầu.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Automatically modifies the network throughput of EC2 instances, based on demand. - Tự động điều chỉnh thông lượng mạng của EC2 instance theo nhu cầu.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-80",
+      "number": 80,
+      "question": "A user has limited knowledge of AWS services, but wants to quickly deploy a scalable Node.js application in an Amazon VPC. Which service should be used to deploy the application\nĐề bài: Một người dùng có kiến thức AWS hạn chế nhưng muốn nhanh chóng triển khai ứng dụng Node.js có khả năng mở rộng trong Amazon VPC. Nên dùng dịch vụ nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Elastic Beanstalk - Dịch vụ triển khai và mở rộng ứng dụng AWS Elastic Beanstalk",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS CloudFormation - Dịch vụ tự động hóa triển khai hạ tầng AWS CloudFormation",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon EC2 - Dịch vụ máy chủ ảo Amazon EC2",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon LightSail - Dịch vụ máy chủ đơn giản Amazon Lightsail",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-81",
+      "number": 81,
+      "question": "A Service Control Policy (SCP) is used to manage the maximum available permissions and is associated with which of the following? Service control policies (SCPs) manage permissions for which of the following?\nĐề bài: Service Control Policy (SCP) được dùng để quản lý quyền tối đa có thể cấp và gắn với dịch vụ nào sau đây?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Global Infrastructure - Hạ tầng toàn cầu AWS",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Regions - Các vùng AWS Region",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Availability Zones - Các vùng sẵn sàng Availability Zone",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Organizations - Dịch vụ quản lý nhiều tài khoản AWS Organizations",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-82",
+      "number": 82,
+      "question": "Which AWS service can be used to run Docker containers?\nĐề bài: Dịch vụ AWS nào có thể dùng để chạy Docker container?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Lambda - Dịch vụ chạy mã không cần quản lý máy chủ AWS Lambda",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon ECS - Dịch vụ điều phối container Amazon ECS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon AMI - Amazon Machine Image - ảnh máy để khởi chạy EC2",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon ECR - Dịch vụ lưu trữ image container Amazon ECR",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-83",
+      "number": 83,
+      "question": "A Cloud Practitioner wants to configure the AWS CLI for programmatic access to AWS services. Which credential components are required? (Select TWO.)\nĐề bài: Cloud Practitioner muốn cấu hình AWS CLI để truy cập AWS theo kiểu lập trình. Cần những thành phần thông tin xác thực nào? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "An access key ID - Mã định danh access key",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "A secret access key - Secret access key",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "A private key - Private key",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "A public key - Public key",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "An IAM Role - IAM Role",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A",
+        "B"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-84",
+      "number": 84,
+      "question": "Which of the following can be used to identify a specific user who terminated an Amazon RDS DB instance?\nĐề bài: Dịch vụ nào có thể dùng để xác định người dùng cụ thể đã xóa một Amazon RDS DB instance?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Trusted Advisor - Công cụ tư vấn tối ưu AWS Trusted Advisor",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS CloudTrail - Dịch vụ ghi nhật ký và theo dõi hoạt động AWS CloudTrail",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon CloudWatch - Dịch vụ giám sát Amazon CloudWatch",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Inspector - Dịch vụ đánh giá bảo mật Amazon Inspector",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-85",
+      "number": 85,
+      "question": "Which AWS-managed service can be used to process vast amounts of data using a hosted Hadoop framework?\nĐề bài: Dịch vụ được AWS quản lý nào có thể dùng để xử lý lượng dữ liệu rất lớn bằng framework Hadoop được lưu trữ sẵn?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon EMR - Dịch vụ xử lý dữ liệu lớn Amazon EMR",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon DynamoDB - Cơ sở dữ liệu NoSQL Amazon DynamoDB",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Redshift - Dịch vụ kho dữ liệu Amazon Redshift",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Athena - Dịch vụ truy vấn dữ liệu Amazon Athena",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-86",
+      "number": 86,
+      "question": "Which benefits can a company immediately realize using the AWS Cloud? (Select TWO.)\nĐề bài: Công ty có thể nhận ngay lợi ích nào khi dùng AWS Cloud? (Chọn HAI đáp án.)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "User control of physical infrastructure - Người dùng kiểm soát hạ tầng vật lý",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Increased agility - Tăng tính linh hoạt",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "No responsibility for security - Không có trách nhiệm về bảo mật",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Variable expenses are replaced with capital expenses - Chi phí biến đổi được thay bằng chi phí vốn",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Capital expenses are replaced with variable expenses - Chi phí vốn được thay bằng chi phí biến đổi",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "E"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-87",
+      "number": 87,
+      "question": "A company is migrating virtual machines (VMs) from their data center to the AWS Cloud. The company plans to deploy these migrated machines on Amazon EC2. Which cloud computing model will the company use for this operation?\nĐề bài: Một công ty đang di chuyển máy ảo từ trung tâm dữ liệu lên AWS Cloud và dự định triển khai các máy này trên Amazon EC2. Công ty sẽ dùng mô hình điện toán đám mây nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Platform as a Service (PaaS) - Nền tảng dưới dạng dịch vụ PaaS",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Function as a Service (FaaS) - Hàm dưới dạng dịch vụ FaaS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Software as a Service (SaaS) - Phần mềm dưới dạng dịch vụ SaaS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Infrastructure as a Service (IaaS) - Hạ tầng dưới dạng dịch vụ IaaS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-88",
+      "number": 88,
+      "question": "Which AWS service does AWS Snowball Edge natively support?\nĐề bài: AWS Snowball Edge hỗ trợ nguyên bản dịch vụ AWS nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Trusted Advisor - Công cụ tư vấn tối ưu AWS Trusted Advisor",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Database Migration Service (AWS DMS) - Dịch vụ di chuyển cơ sở dữ liệu AWS DMS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon EC2 - Dịch vụ máy chủ ảo Amazon EC2",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Server Migration Service (AWS SMS) - Dịch vụ di chuyển máy chủ AWS SMS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-89",
+      "number": 89,
+      "question": "A small business owner who is not tech-savvy is looking to find AWS certified experts for a short-term project. They need a service that can help them connect with professionals who can offer advice and help implement AWS solutions quickly. Which AWS service should they use?\nĐề bài: Một chủ doanh nghiệp nhỏ không rành kỹ thuật muốn tìm chuyên gia được chứng nhận AWS cho dự án ngắn hạn. Họ cần dịch vụ giúp kết nối với chuyên gia để được tư vấn và triển khai giải pháp AWS nhanh chóng. Nên dùng dịch vụ nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Marketplace - Chợ phần mềm AWS Marketplace",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS IQ - Dịch vụ kết nối với chuyên gia AWS IQ",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Support - Dịch vụ hỗ trợ AWS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Training and Certification - Chương trình đào tạo và chứng chỉ AWS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-90",
+      "number": 90,
+      "question": "AWS are able to continue to reduce their pricing due to:\nĐề bài: AWS có thể tiếp tục giảm giá nhờ yếu tố nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reserved instance pricing - Mô hình giá Reserved Instance",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Economies of scale - Lợi thế kinh tế theo quy mô",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Pay-as-you go pricing - Mô hình trả tiền theo mức sử dụng",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "The AWS global infrastructure - Hạ tầng toàn cầu AWS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-91",
+      "number": 91,
+      "question": "Which Amazon EC2 pricing model should be avoided if a workload cannot accept interruption if capacity becomes temporarily unavailable?\nĐề bài: Mô hình giá Amazon EC2 nào nên tránh nếu workload không thể chấp nhận bị gián đoạn khi capacity tạm thời không khả dụng?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Standard Reserved Instances - Standard Reserved Instances - instance đặt trước tiêu chuẩn",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Spot Instances - Spot Instances - instance giá thấp có thể bị thu hồi",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Convertible Reserved Instances - Convertible Reserved Instances - instance đặt trước có thể chuyển đổi",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "On-Demand Instances - On-Demand Instances - instance trả theo nhu cầu",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-92",
+      "number": 92,
+      "question": "According to the shared responsibility model, which security-related task is the responsibility of the customer?\nĐề bài: Theo mô hình trách nhiệm chia sẻ, tác vụ liên quan đến bảo mật nào là trách nhiệm của khách hàng?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Maintaining firewall configurations at a hardware level. - Bảo trì cấu hình tường lửa ở cấp phần cứng.",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Maintaining physical networking configuration. - Bảo trì cấu hình mạng vật lý.",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Securing servers and racks at AWS data centers. - Bảo vệ máy chủ và tủ rack tại trung tâm dữ liệu AWS.",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Maintaining server-side encryption. - Duy trì mã hóa phía máy chủ.",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-93",
+      "number": 93,
+      "question": "A newly founded tech startup is looking for a program that offers AWS credits, training, technical support, and other resources to help them build their business. Which AWS program would be the best fit for them?\nĐề bài: Một startup công nghệ mới thành lập cần chương trình cung cấp AWS credit, đào tạo, hỗ trợ kỹ thuật và các tài nguyên khác để xây dựng doanh nghiệp. Chương trình AWS nào phù hợp nhất?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Educate - Chương trình đào tạo AWS Educate",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Partner Network - Mạng lưới đối tác AWS",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Activate for Startups - Chương trình AWS Activate dành cho startup",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Marketplace - Chợ phần mềm AWS Marketplace",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "C"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "devops-q-2-94",
+      "number": 94,
+      "question": "A company requires a dashboard for reporting when using a business intelligence solution. Which AWS service can a Cloud Practitioner use? Which AWS service can be used?\nĐề bài: Một công ty cần dashboard để báo cáo khi sử dụng giải pháp phân tích kinh doanh. Cloud Practitioner có thể dùng dịch vụ AWS nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amazon QuickSight - Dịch vụ phân tích kinh doanh Amazon QuickSight",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Redshift - Dịch vụ kho dữ liệu Amazon Redshift",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon Athena - Dịch vụ truy vấn dữ liệu Amazon Athena",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Kinesis - Dịch vụ xử lý dữ liệu streaming Amazon Kinesis",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-95",
+      "number": 95,
+      "question": "Which AWS service helps customers meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated hardware appliances within the AWS Cloud?\nĐề bài: Dịch vụ AWS nào giúp khách hàng đáp ứng yêu cầu tuân thủ doanh nghiệp, hợp đồng và quy định về bảo mật dữ liệu bằng thiết bị phần cứng chuyên dụng trong AWS Cloud?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS CloudHSM - Dịch vụ quản lý khóa trên phần cứng chuyên dụng AWS CloudHSM",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "AWS Secrets Manager - Dịch vụ quản lý bí mật AWS Secrets Manager",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Key Management Service (AWS KMS) - Dịch vụ quản lý khóa AWS KMS",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Directory Service - Dịch vụ thư mục AWS Directory Service",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-96",
+      "number": 96,
+      "question": "Amazon Elastic Compute Cloud (Amazon EC2) Spot instances are a best-fit for which of the following scenarios?\nĐề bài: Amazon EC2 Spot Instance phù hợp nhất với tình huống nào?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "To run any containerized workload with Amazon Elastic Container Service (Amazon ECS) that can be interrupted - Chạy workload container với Amazon ECS có thể bị gián đoạn",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "To run batch processes for critical workloads - Chạy batch process cho workload quan trọng",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "To install cost-effective Amazon RDS database - Cài đặt cơ sở dữ liệu Amazon RDS tiết kiệm chi phí",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "To run scheduled jobs (jobs that run at the same time every day) - Chạy job theo lịch cố định hằng ngày",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-97",
+      "number": 97,
+      "question": "A multi-national organization has a separate virtual private cloud (VPC) for each of its business units on the AWS Cloud. The organization also wants to connect its on-premises data center with the different virtual private clouds (VPC) for better organization-wide collaboration. Which AWS services can be combined to build the MOST efficient solution for this use-case? (Select two)\nĐề bài: Một tổ chức đa quốc gia có VPC riêng cho từng đơn vị kinh doanh trên AWS Cloud và muốn kết nối data center tại chỗ với các VPC khác nhau. Nên kết hợp dịch vụ AWS nào để có giải pháp hiệu quả nhất? (Chọn hai đáp án)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Internet Gateway - Internet Gateway - cổng kết nối Internet",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "VPC peering connection - Kết nối ngang hàng VPC peering",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Storage Gateway - Dịch vụ lưu trữ lai AWS Storage Gateway",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Direct Connect - Dịch vụ kết nối riêng chuyên dụng AWS Direct Connect",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "AWS Transit Gateway - Cổng trung chuyển mạng AWS Transit Gateway",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "D",
+        "E"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "devops-q-2-98",
+      "number": 98,
+      "question": "Which of the following AWS services offers Lifecycle configuration for cost-optimal storage?\nĐề bài: Dịch vụ AWS nào cung cấp Lifecycle configuration để tối ưu chi phí lưu trữ?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "AWS Storage Gateway - Dịch vụ lưu trữ lai AWS Storage Gateway",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Simple Storage Service (Amazon S3) - Dịch vụ lưu trữ đối tượng Amazon S3",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Amazon EC2 Instance Store - Instance Store của Amazon EC2",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Amazon Elastic Block Store (Amazon EBS) - Dịch vụ lưu trữ khối Amazon EBS",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "devops-q-2-99",
+      "number": 99,
+      "question": "Which of the following AWS entities lists all users in your account and the status of their various account aspects such as passwords, access keys, and MFA devices?\nĐề bài: Thực thể AWS nào liệt kê tất cả người dùng trong tài khoản và trạng thái các yếu tố như mật khẩu, access key và thiết bị MFA?",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Credentials Report - Báo cáo thông tin xác thực IAM Credential Report",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Amazon Inspector - Dịch vụ đánh giá bảo mật tự động Amazon Inspector",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "AWS Cost & Usage Report (AWS CUR) - Báo cáo chi phí và mức sử dụng AWS CUR",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "AWS Trusted Advisor - Công cụ tư vấn best practice AWS Trusted Advisor",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "A"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": "devops-q-2-100",
+      "number": 100,
+      "question": "Which of the following types are free under the Amazon Simple Storage Service (Amazon S3) pricing model? (Select two)\nĐề bài: Những loại nào được miễn phí trong mô hình giá Amazon S3? (Chọn hai đáp án)",
+      "images": [],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Data transferred out to an Amazon Elastic Compute Cloud (Amazon EC2) instance in any AWS Region - Dữ liệu truyền ra EC2 instance ở bất kỳ AWS Region nào",
+          "images": []
+        },
+        {
+          "label": "B",
+          "text": "Data transferred out to an Amazon Elastic Compute Cloud (Amazon EC2) instance, when the instance is in the same AWS Region as the S3 bucket - Dữ liệu truyền ra EC2 instance khi instance ở cùng AWS Region với S3 bucket",
+          "images": []
+        },
+        {
+          "label": "C",
+          "text": "Data transferred in from the internet - Dữ liệu truyền vào từ Internet",
+          "images": []
+        },
+        {
+          "label": "D",
+          "text": "Data storage fee for objects stored in S3 Standard - Phí lưu trữ dữ liệu cho object trong S3 Standard",
+          "images": []
+        },
+        {
+          "label": "E",
+          "text": "Data storage fee for objects stored in S3 Glacier - Phí lưu trữ dữ liệu cho object trong S3 Glacier",
+          "images": []
+        }
+      ],
+      "correctAnswers": [
+        "B",
+        "C"
+      ],
+      "correctAnswer": "B"
+    }
+  ]
+}
