@@ -48,6 +48,22 @@ function htmlToItems(html) {
     .filter((item) => item.text || item.images.length);
 }
 
+function preprocessHtml(html) {
+  return html.replace(/<ol\b[^>]*>([\s\S]*?)<\/ol>/gi, (match, listContent) => {
+    let index = 0;
+    return listContent.replace(/<li>([\s\S]*?)<\/li>/gi, (liMatch, liContent) => {
+      if (index < 8) {
+        const letter = String.fromCharCode(65 + index);
+        index++;
+        if (!/^[A-H]\s*[.)：:\-]/i.test(liContent.replace(/<[^>]+>/g, "").trim())) {
+          return `<li>${letter}. ${liContent}</li>`;
+        }
+      }
+      return liMatch;
+    });
+  });
+}
+
 const buffer = await fs.readFile(input);
 const result = await mammoth.convertToHtml(
   { buffer },
@@ -61,7 +77,7 @@ const result = await mammoth.convertToHtml(
   }
 );
 
-const parsed = parseQuizItems(htmlToItems(result.value));
+const parsed = parseQuizItems(htmlToItems(preprocessHtml(result.value)));
 const imageCount = parsed.questions.reduce(
   (total, question) =>
     total +

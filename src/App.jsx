@@ -14,10 +14,66 @@ import { extractDocxItems } from "./docxExtractor.js";
 import ImageList from "./components/ImageList.jsx";
 import RichText from "./components/RichText.jsx";
 
+const PRELOADED_DEVOPS_EXAMS = [
+  {
+    id: "devops-exam-1",
+    title: "Đề 1: AWS Cloud Practitioner CLF-C02",
+    meta: "100 câu hỏi song ngữ Anh - Việt",
+    fileName: "Đề_1_CLF2 song ngữ 100 câu.docx",
+    path: "/devops/Đề_1_CLF2%20song%20ngữ%20100%20câu.docx"
+  },
+  {
+    id: "devops-exam-2",
+    title: "Đề 2: AWS Cloud Practitioner CLF-C02",
+    meta: "100 câu hỏi song ngữ Anh - Việt",
+    fileName: "Đề_2_CLF2 song ngữ 100 câu.docx",
+    path: "/devops/Đề_2_CLF2%20song%20ngữ%20100%20câu.docx"
+  },
+  {
+    id: "devops-exam-3",
+    title: "Đề 3: AWS Cloud Practitioner CLF-C02",
+    meta: "100 câu hỏi song ngữ Anh - Việt",
+    fileName: "Đề_3_CLF2 song ngữ 100 câu.docx",
+    path: "/devops/Đề_3_CLF2%20song%20ngữ%20100%20câu.docx"
+  },
+  {
+    id: "devops-exam-4",
+    title: "Đề 4: AWS Cloud Practitioner CLF-C02",
+    meta: "100 câu hỏi song ngữ Anh - Việt",
+    fileName: "Đề_4_CLF2 song ngữ 100 câu.docx",
+    path: "/devops/Đề_4_CLF2%20song%20ngữ%20100%20câu.docx"
+  },
+  {
+    id: "devops-exam-5",
+    title: "Đề 5: AWS Cloud Practitioner CLF-C02",
+    meta: "100 câu hỏi song ngữ Anh - Việt",
+    fileName: "Đề_5_CLF2 song ngữ 100 câu.docx",
+    path: "/devops/Đề_5_CLF2%20song%20ngữ%20100%20câu.docx"
+  }
+];
+
+const PRELOADED_TTHCM_EXAMS = [
+  {
+    id: "tthcm-exam-1",
+    title: "Đề 1: 125 câu hỏi trắc nghiệm ôn tập tổng hợp",
+    meta: "Ngân hàng câu hỏi trắc nghiệm Tư tưởng HCM",
+    fileName: "Ngân hàng câu hỏi từ Google Form.docx",
+    path: "/tthcm/questions_tthcm.json"
+  }
+];
+
+function getSubjectFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get("subject");
+  if (subject === "tthcm") return "tthcm";
+  return subject === "devops" ? "devops" : "ccna";
+}
+
 export default function App() {
   const inputRef = useRef(null);
   const jsonInputRef = useRef(null);
-  const [quiz, setQuiz] = useState(() => loadStoredQuiz());
+  const [subject, setSubject] = useState(getSubjectFromUrl);
+  const [quiz, setQuiz] = useState(() => loadStoredQuiz(getSubjectFromUrl()));
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -31,27 +87,139 @@ export default function App() {
   // Các state mới cho Chế độ Thực chiến
   const [quizMode, setQuizMode] = useState("exam"); // "exam" | "practice"
   const [isShuffle, setIsShuffle] = useState(true);
+  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
 
   useEffect(() => {
+    setActiveQuestionIndex(0);
+  }, [questions]);
+
+  function getQuestionStatus(question) {
+    const selectedAnswers = answers[question.id] || [];
+    const correctAnswers = question.correctAnswers || [question.correctAnswer];
+    
+    if (selectedAnswers.length === 0) {
+      return "unanswered";
+    }
+    
+    const isQuestionSubmitted = submitted || (quizMode === "practice" && selectedAnswers.length === correctAnswers.length);
+    
+    if (!isQuestionSubmitted) {
+      return "answering";
+    }
+    
+    const correct = sameAnswers(selectedAnswers, correctAnswers);
+    return correct ? "correct" : "wrong";
+  }
+
+  // Sync subject to URL and update body class
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (subject === "devops") {
+      params.set("subject", "devops");
+    } else if (subject === "tthcm") {
+      params.set("subject", "tthcm");
+    } else {
+      params.delete("subject");
+    }
+    const newSearch = params.toString();
+    const newUrl = `${window.location.pathname}${newSearch ? "?" + newSearch : ""}`;
+    window.history.replaceState({}, "", newUrl);
+
+    // Apply class to body or root element
+    if (subject === "devops") {
+      document.documentElement.classList.add("theme-devops");
+      document.documentElement.classList.remove("theme-tthcm");
+    } else if (subject === "tthcm") {
+      document.documentElement.classList.add("theme-tthcm");
+      document.documentElement.classList.remove("theme-devops");
+    } else {
+      document.documentElement.classList.remove("theme-devops", "theme-tthcm");
+    }
+  }, [subject]);
+
+  useEffect(() => {
+    setQuiz(loadStoredQuiz(subject));
+    setQuestions([]);
+    setAnswers({});
+    setSubmitted(false);
+    setMessage("");
     refreshLibrary();
-  }, []);
+  }, [subject]);
 
   async function refreshLibrary() {
     try {
-      setSavedQuizzes(await loadQuizLibrary());
+      setSavedQuizzes(await loadQuizLibrary(subject));
     } catch {
       setSavedQuizzes([]);
     }
   }
 
   async function persistQuiz(quiz) {
-    const savedLocally = saveStoredQuiz(quiz);
+    const savedLocally = saveStoredQuiz(quiz, subject);
     try {
-      await saveQuizToLibrary(quiz);
+      await saveQuizToLibrary(quiz, subject);
       await refreshLibrary();
       return { savedLocally, savedInLibrary: true };
     } catch {
       return { savedLocally, savedInLibrary: false };
+    }
+  }
+
+  async function loadPreloadedExam(exam) {
+    setLoading(true);
+    setMessage(`Đang tải ${exam.title}...`);
+    setQuestions([]);
+    setAnswers({});
+    setSubmitted(false);
+
+    try {
+      const response = await fetch(exam.path);
+      if (!response.ok) {
+        throw new Error("Không thể tải file đề thi từ máy chủ.");
+      }
+
+      let nextQuiz;
+      if (exam.path.endsWith(".json")) {
+        const json = await response.json();
+        nextQuiz = {
+          id: json.id || crypto.randomUUID?.() || `quiz-${Date.now()}`,
+          fileName: exam.fileName,
+          importedAt: new Date().toISOString(),
+          questions: json.questions,
+          warnings: json.warnings || [],
+          manualNotes: json.manualNotes || []
+        };
+      } else {
+        const arrayBuffer = await response.arrayBuffer();
+        const items = await extractDocxItems(arrayBuffer);
+        const parsed = parseQuizItems(items);
+
+        if (parsed.questions.length === 0 && (parsed.manualNotes || []).length === 0) {
+          setMessage(parsed.warnings[0] || "Không đọc được câu hỏi từ file.");
+          return;
+        }
+
+        nextQuiz = {
+          id: crypto.randomUUID?.() || `quiz-${Date.now()}`,
+          fileName: exam.fileName,
+          importedAt: new Date().toISOString(),
+          questions: parsed.questions,
+          warnings: parsed.warnings,
+          manualNotes: parsed.manualNotes || []
+        };
+      }
+
+      setQuiz(nextQuiz);
+      const saved = await persistQuiz(nextQuiz);
+
+      const isJson = exam.path.endsWith(".json");
+      const manualCount = nextQuiz.manualNotes?.length || 0;
+      const saveMessage = saved.savedInLibrary ? "" : " Không lưu được vào thư viện vì dung lượng quá lớn.";
+      setMessage(`Đã tải thành công ${exam.title}: Nhập ${nextQuiz.questions.length} câu hỏi.${manualCount > 0 ? ` ${manualCount} câu cần tự làm.` : ""}${saveMessage}`);
+    } catch (error) {
+      setMessage(error?.message || "Không thể tải hoặc phân tích đề thi.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -128,16 +296,18 @@ export default function App() {
     setQuestions(isShuffle ? shuffleQuestions(quiz.questions) : quiz.questions);
     setAnswers({});
     setSubmitted(false);
+    setActiveQuestionIndex(0);
     setMessage(isShuffle ? "Đã đảo thứ tự câu hỏi. Bắt đầu làm bài." : "Đã bắt đầu làm bài.");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function clearQuiz() {
-    clearStoredQuiz();
+    clearStoredQuiz(subject);
     setQuiz(null);
     setQuestions([]);
     setAnswers({});
     setSubmitted(false);
+    setActiveQuestionIndex(0);
     setMessage("Đã xóa quiz hiện tại.");
   }
 
@@ -324,13 +494,52 @@ export default function App() {
 
   return (
     <main className="page">
+      <header className="app-header">
+        <div className="brand">
+          <div className="brand-icon">
+            {subject === "devops" ? "☁" : subject === "tthcm" ? "🇻🇳" : "⚙"}
+          </div>
+          <strong>{subject === "devops" ? "DevOps Cloud Quiz" : subject === "tthcm" ? "Tư tưởng HCM Quiz" : "CCNA Cisco Quiz"}</strong>
+        </div>
+        <nav className="nav-tabs">
+          <button
+            type="button"
+            className={subject === "ccna" ? "nav-tab active" : "nav-tab"}
+            onClick={() => setSubject("ccna")}
+          >
+            💻 CCNA Prep
+          </button>
+          <button
+            type="button"
+            className={subject === "devops" ? "nav-tab active" : "nav-tab"}
+            onClick={() => setSubject("devops")}
+          >
+            ☁ DevOps Prep
+          </button>
+          <button
+            type="button"
+            className={subject === "tthcm" ? "nav-tab active" : "nav-tab"}
+            onClick={() => setSubject("tthcm")}
+          >
+            🇻🇳 Tư tưởng HCM
+          </button>
+        </nav>
+      </header>
+
       <section className="hero">
         <div>
-          <p className="kicker">DOCX Quiz</p>
-          <h1>Tạo bài trắc nghiệm từ file Word</h1>
+          <p className="kicker">
+            {subject === "devops" ? "AWS & DevOps Cloud Prep" : subject === "tthcm" ? "Tư tưởng Hồ Chí Minh" : "CCNA Routing & Switching"}
+          </p>
+          <h1>
+            {subject === "devops" ? "Luyện thi DevOps Cloud Practitioner" : subject === "tthcm" ? "Ôn tập Tư tưởng Hồ Chí Minh" : "Tạo bài trắc nghiệm từ file Word"}
+          </h1>
           <p className="heroText">
-            Upload file Word .docx có câu hỏi, hình ảnh và đáp án A/B/C/D. Web sẽ tự nhận nhiều kiểu format,
-            đảo thứ tự câu và chấm điểm sau khi nộp.
+            {subject === "devops"
+              ? "Trang luyện thi chứng chỉ AWS Certified Cloud Practitioner CLF-C02. Tải lên file .docx của riêng bạn hoặc ôn tập trực tiếp với 5 bộ đề song ngữ được tích hợp sẵn ở dưới."
+              : subject === "tthcm"
+              ? "Hệ thống trắc nghiệm ôn tập Tư tưởng Hồ Chí Minh. Bộ câu hỏi được biên soạn chuẩn xác từ Google Form, hỗ trợ chế độ thi thử và thực chiến đắc lực."
+              : "Upload file Word .docx có câu hỏi, hình ảnh và đáp án A/B/C/D. Web sẽ tự nhận nhiều kiểu format, đảo thứ tự câu và chấm điểm sau khi nộp."}
           </p>
         </div>
 
@@ -385,6 +594,60 @@ export default function App() {
           Chọn file Word
         </button>
       </section>
+
+      {subject === "devops" && (
+        <section className="preloaded-exams">
+          <p className="label">Đề thi CLF-C02 song ngữ có sẵn</p>
+          <h2>Luyện tập tức thì</h2>
+          <p style={{ color: "#647381", margin: "0 0 18px", lineHeight: 1.5 }}>
+            Chọn một trong 5 bộ đề AWS Cloud Practitioner được tích hợp sẵn để bắt đầu học ngay lập tức mà không cần chuẩn bị file:
+          </p>
+          <div className="preloaded-grid">
+            {PRELOADED_DEVOPS_EXAMS.map((exam) => (
+              <div
+                key={exam.id}
+                className="preloaded-card"
+                onClick={() => loadPreloadedExam(exam)}
+              >
+                <div>
+                  <h3 className="preloaded-card-title">{exam.title}</h3>
+                  <p className="preloaded-card-meta">{exam.meta}</p>
+                </div>
+                <div className="preloaded-card-action">
+                  ⚡ Vào làm bài ngay →
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {subject === "tthcm" && (
+        <section className="preloaded-exams">
+          <p className="label">Đề ôn tập Tư tưởng Hồ Chí Minh có sẵn</p>
+          <h2>Luyện tập tức thì</h2>
+          <p style={{ color: "#647381", margin: "0 0 18px", lineHeight: 1.5 }}>
+            Chọn bộ đề thi trắc nghiệm Tư tưởng Hồ Chí Minh được tích hợp từ file Word gốc để vào ôn luyện ngay lập tức:
+          </p>
+          <div className="preloaded-grid">
+            {PRELOADED_TTHCM_EXAMS.map((exam) => (
+              <div
+                key={exam.id}
+                className="preloaded-card"
+                onClick={() => loadPreloadedExam(exam)}
+              >
+                <div>
+                  <h3 className="preloaded-card-title">{exam.title}</h3>
+                  <p className="preloaded-card-meta">{exam.meta}</p>
+                </div>
+                <div className="preloaded-card-action">
+                  ⚡ Vào làm bài ngay →
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {loading && <p className="notice">Đang đọc file...</p>}
       {message && <p className="notice">{message}</p>}
@@ -563,11 +826,11 @@ export default function App() {
         </section>
       )}
 
-      {questions.length > 0 && (
+      {questions.length > 0 && quizMode === "exam" && (
         <section className="quiz">
           <div className="toolbar">
             <div>
-              <p className="label">Bài làm</p>
+              <p className="label">Bài làm (Chế độ Thi thử)</p>
               <h2>
                 {answeredCount}/{questions.length} câu đã chọn
               </h2>
@@ -595,9 +858,7 @@ export default function App() {
             {questions.map((question, index) => {
               const selectedAnswers = answers[question.id] || [];
               const correctAnswers = question.correctAnswers || [question.correctAnswer];
-              
-              // Trong chế độ thực chiến, câu hỏi được đánh giá ngay khi số lượng đáp án được chọn bằng với số lượng đáp án đúng
-              const isQuestionSubmitted = submitted || (quizMode === "practice" && selectedAnswers.length === correctAnswers.length);
+              const isQuestionSubmitted = submitted;
 
               return (
                 <article className="question" key={question.id}>
@@ -642,6 +903,181 @@ export default function App() {
               );
             })}
           </div>
+        </section>
+      )}
+
+      {questions.length > 0 && quizMode === "practice" && (
+        <section className="practice-playground">
+          <div className="practice-main">
+            <div className="practice-card-header">
+              <div>
+                <p className="label">Chế độ Thực chiến</p>
+                <h2>Câu {questions[activeQuestionIndex].number || (activeQuestionIndex + 1)}</h2>
+              </div>
+              <div className="practice-nav-actions">
+                <button
+                  type="button"
+                  className="secondary smallButton"
+                  style={{ marginTop: 0 }}
+                  disabled={activeQuestionIndex === 0}
+                  onClick={() => {
+                    setActiveQuestionIndex((prev) => prev - 1);
+                  }}
+                >
+                  ← Câu trước
+                </button>
+                <span className="practice-counter">
+                  <strong>{activeQuestionIndex + 1}</strong> / {questions.length}
+                </span>
+                <button
+                  type="button"
+                  className="primary smallButton"
+                  style={{ marginTop: 0 }}
+                  disabled={activeQuestionIndex === questions.length - 1}
+                  onClick={() => {
+                    setActiveQuestionIndex((prev) => prev + 1);
+                  }}
+                >
+                  Câu tiếp →
+                </button>
+              </div>
+            </div>
+
+            {(() => {
+              const question = questions[activeQuestionIndex];
+              const selectedAnswers = answers[question.id] || [];
+              const correctAnswers = question.correctAnswers || [question.correctAnswer];
+              const isQuestionSubmitted = submitted || (selectedAnswers.length === correctAnswers.length);
+
+              return (
+                <article className="question active-question-card" key={question.id}>
+                  {correctAnswers.length > 1 && (
+                    <p className="multiHint">Chọn {correctAnswers.length} đáp án</p>
+                  )}
+                  <RichText text={question.question} className="questionText" />
+                  <ImageList images={question.images} />
+
+                  <div className="options">
+                    {question.choices.map((choice) => {
+                      const selected = selectedAnswers.includes(choice.label);
+                      const correct = correctAnswers.includes(choice.label);
+                      const isMultiAnswer = correctAnswers.length > 1;
+
+                      return (
+                        <label
+                          className={optionClass({ submitted: isQuestionSubmitted, selected, correct })}
+                          key={choice.label}
+                        >
+                          <input
+                            type={isMultiAnswer ? "checkbox" : "radio"}
+                            name={question.id}
+                            checked={selected}
+                            disabled={isQuestionSubmitted}
+                            onChange={() => chooseAnswer(question, choice.label)}
+                          />
+                          <span className="letter">{choice.label}</span>
+                          <span className="choiceContent">
+                            <RichText text={choice.text} className="choiceText" />
+                            <ImageList images={choice.images} compact />
+                          </span>
+                        </label>
+                      );
+                    })}
+                  </div>
+
+                  {isQuestionSubmitted && (
+                    <div className={`practice-feedback ${sameAnswers(selectedAnswers, correctAnswers) ? "practice-feedback--correct" : "practice-feedback--wrong"}`}>
+                      <strong>
+                        {sameAnswers(selectedAnswers, correctAnswers) ? "✓ Chính xác!" : "✗ Chưa chính xác!"}
+                      </strong>
+                      <span> Đáp án đúng: {correctAnswers.join(", ")}</span>
+                    </div>
+                  )}
+                </article>
+              );
+            })()}
+
+            <div className="practice-footer-nav">
+              <button
+                type="button"
+                className="secondary"
+                disabled={activeQuestionIndex === 0}
+                onClick={() => {
+                  setActiveQuestionIndex((prev) => prev - 1);
+                }}
+              >
+                ← Câu trước
+              </button>
+
+              <button
+                type="button"
+                className="primary"
+                disabled={activeQuestionIndex === questions.length - 1}
+                onClick={() => {
+                  setActiveQuestionIndex((prev) => prev + 1);
+                }}
+              >
+                Câu tiếp theo →
+              </button>
+            </div>
+          </div>
+
+          <aside className="practice-sidebar">
+            <div className="sidebar-header">
+              <h3>Bản đồ câu hỏi</h3>
+              <div className="sidebar-stats">
+                <span className="stat-item stat-item--correct">
+                  <span className="stat-dot"></span>
+                  Đúng: {
+                    questions.filter((q) => {
+                      const sel = answers[q.id] || [];
+                      const cor = q.correctAnswers || [q.correctAnswer];
+                      return sel.length === cor.length && sameAnswers(sel, cor);
+                    }).length
+                  }
+                </span>
+                <span className="stat-item stat-item--wrong">
+                  <span className="stat-dot"></span>
+                  Sai: {
+                    questions.filter((q) => {
+                      const sel = answers[q.id] || [];
+                      const cor = q.correctAnswers || [q.correctAnswer];
+                      return sel.length === cor.length && !sameAnswers(sel, cor);
+                    }).length
+                  }
+                </span>
+                <span className="stat-item stat-item--unanswered">
+                  <span className="stat-dot"></span>
+                  Chưa làm: {
+                    questions.filter((q) => (answers[q.id] || []).length === 0).length
+                  }
+                </span>
+              </div>
+            </div>
+
+            <div className="practice-grid">
+              {questions.map((q, idx) => {
+                const status = getQuestionStatus(q);
+                let btnClass = "practice-grid-btn";
+                if (idx === activeQuestionIndex) btnClass += " active";
+                btnClass += ` ${status}`;
+
+                return (
+                  <button
+                    key={q.id}
+                    type="button"
+                    className={btnClass}
+                    onClick={() => {
+                      setActiveQuestionIndex(idx);
+                    }}
+                    title={`Câu ${q.number || (idx + 1)}`}
+                  >
+                    {idx + 1}
+                  </button>
+                );
+              })}
+            </div>
+          </aside>
         </section>
       )}
     </main>

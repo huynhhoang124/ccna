@@ -3,9 +3,10 @@ const DB_NAME = "docx-quiz-redo-db";
 const DB_VERSION = 1;
 const QUIZ_STORE = "quizzes";
 
-export function loadStoredQuiz() {
+export function loadStoredQuiz(subject = "ccna") {
   try {
-    const value = localStorage.getItem(STORAGE_KEY);
+    const key = subject === "ccna" ? STORAGE_KEY : `${STORAGE_KEY}:${subject}`;
+    const value = localStorage.getItem(key);
     if (!value) return null;
     const quiz = JSON.parse(value);
     if (!quiz || !Array.isArray(quiz.questions)) {
@@ -17,17 +18,19 @@ export function loadStoredQuiz() {
   }
 }
 
-export function saveStoredQuiz(quiz) {
+export function saveStoredQuiz(quiz, subject = "ccna") {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(quiz));
+    const key = subject === "ccna" ? STORAGE_KEY : `${STORAGE_KEY}:${subject}`;
+    localStorage.setItem(key, JSON.stringify(quiz));
     return true;
   } catch {
     return false;
   }
 }
 
-export function clearStoredQuiz() {
-  localStorage.removeItem(STORAGE_KEY);
+export function clearStoredQuiz(subject = "ccna") {
+  const key = subject === "ccna" ? STORAGE_KEY : `${STORAGE_KEY}:${subject}`;
+  localStorage.removeItem(key);
 }
 
 function openQuizDb() {
@@ -67,13 +70,17 @@ export function quizMeta(quiz) {
   };
 }
 
-export async function saveQuizToLibrary(quiz) {
-  await idbRequest({ mode: "readwrite", run: (store) => store.put(quiz) });
+export async function saveQuizToLibrary(quiz, subject = "ccna") {
+  const quizWithSubject = { ...quiz, subject };
+  await idbRequest({ mode: "readwrite", run: (store) => store.put(quizWithSubject) });
 }
 
-export async function loadQuizLibrary() {
+export async function loadQuizLibrary(subject = "ccna") {
   const quizzes = await idbRequest({ mode: "readonly", run: (store) => store.getAll() });
-  return quizzes.map(quizMeta).sort((a, b) => new Date(b.importedAt) - new Date(a.importedAt));
+  return quizzes
+    .filter((q) => (subject === "ccna" ? !q.subject || q.subject === "ccna" : q.subject === subject))
+    .map(quizMeta)
+    .sort((a, b) => new Date(b.importedAt) - new Date(a.importedAt));
 }
 
 export async function getSavedQuiz(id) {

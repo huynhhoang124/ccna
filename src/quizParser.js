@@ -87,6 +87,63 @@ function matchSingleAnswer(line) {
   return [];
 }
 
+function matchAnswerText(line) {
+  const decoded = line.replace(/&gt;/g, ">").replace(/&lt;/g, "<");
+  const norm = normalized(decoded);
+  const patterns = [
+    /^(?:->|=>)?\s*(?:dap\s*an|dap\s*an\s*dung|answer|correct\s*answer|ans|key)\s*[:：\-]\s*(.+)$/i,
+    /^(?:correct|dung)\s*[:：\-]\s*["']?([^"'\n]+?)["']?\s+(?:is\s+the\s+correct|la\s+dap\s+an)/i,
+    /^(?:correct|dung)\s*[:：\-]\s*["']?([^"'\n]+?)["']?$/i
+  ];
+  
+  for (const pattern of patterns) {
+    const match = norm.match(pattern);
+    if (match) {
+      return match[1].trim();
+    }
+  }
+  return null;
+}
+
+function findMatchingChoiceLabel(draft, answerText) {
+  if (!answerText) return null;
+  const normAnswer = normalized(answerText);
+  
+  // First, look for exact or prefix match
+  for (const [label, choice] of draft.choices.entries()) {
+    const choiceText = choice.textParts.join(" ").trim();
+    const normChoice = normalized(choiceText);
+    
+    if (normChoice.includes(normAnswer) || normAnswer.includes(normChoice)) {
+      return label;
+    }
+  }
+  
+  // Second, split by words and find the one with highest keyword match
+  let bestLabel = null;
+  let maxMatches = 0;
+  const answerWords = normAnswer.split(/\s+/).filter(w => w.length > 2);
+  
+  for (const [label, choice] of draft.choices.entries()) {
+    const choiceText = choice.textParts.join(" ").trim();
+    const normChoice = normalized(choiceText);
+    
+    let matches = 0;
+    for (const word of answerWords) {
+      if (normChoice.includes(word)) {
+        matches++;
+      }
+    }
+    
+    if (matches > maxMatches) {
+      maxMatches = matches;
+      bestLabel = label;
+    }
+  }
+  
+  return maxMatches > 0 ? bestLabel : null;
+}
+
 function parseAnswerLetters(value) {
   return [...new Set((value.match(/[a-h]/giu) || []).map((letter) => letter.toUpperCase()))];
 }
@@ -259,6 +316,13 @@ function applyAnswerKey(draft, answerKey) {
 }
 
 function finishDraft(draft, parsedIndex, answerKey) {
+  if (draft.correctAnswers.length === 0 && draft.pendingAnswerText) {
+    const matchedLabel = findMatchingChoiceLabel(draft, draft.pendingAnswerText);
+    if (matchedLabel) {
+      draft.correctAnswers = [matchedLabel];
+    }
+  }
+
   applyAnswerKey(draft, answerKey);
 
   const warnings = [];
@@ -390,6 +454,15 @@ export function parseQuizItems(rawItems) {
     const singleAnswer = matchSingleAnswer(item.text);
     if (singleAnswer.length > 0) {
       draft.correctAnswers = singleAnswer;
+      appendImages(draft, activeChoice, item.images);
+      activeChoice = "";
+      ignoreUntilNextQuestion = true;
+      continue;
+    }
+
+    const answerText = matchAnswerText(item.text);
+    if (answerText) {
+      draft.pendingAnswerText = answerText;
       appendImages(draft, activeChoice, item.images);
       activeChoice = "";
       ignoreUntilNextQuestion = true;

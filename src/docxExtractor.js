@@ -15,6 +15,21 @@ export async function extractDocxItems(arrayBuffer) {
   );
 
   const documentHtml = new DOMParser().parseFromString(result.value, "text/html");
+
+  // Preprocess ordered lists to insert explicit A., B., C., D. prefixes
+  documentHtml.querySelectorAll("ol").forEach((ol) => {
+    const listItems = ol.querySelectorAll("li");
+    listItems.forEach((li, index) => {
+      if (index < 8) {
+        const letter = String.fromCharCode(65 + index);
+        const text = li.textContent.trim();
+        if (!/^[A-H]\s*[.)：:\-]/i.test(text)) {
+          li.innerHTML = `${letter}. ${li.innerHTML}`;
+        }
+      }
+    });
+  });
+
   const blocks = [...documentHtml.body.querySelectorAll("p, li, td, th")];
   const nodes = blocks.length ? blocks : [...documentHtml.body.children];
 
